@@ -1,0 +1,157 @@
+<div id="LL_contentDiv" style="height: 100%;">
+    <div id="LL_left">
+        <div id="LL_federInfo">
+            <div id="LL_federLogoCont">
+                <div id="wrapLogo" data-toggle="modal" data-target="#myModal">
+                    <div id="LL_federLogo">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                    </div>
+                    <input id='photo_adress' type="text" style="display: none" >
+                </div>
+            </div>
+            <div id="LL_federInfoCont">
+                <div style="width: 100%">
+                    <div class="LL_federCount">
+                        <p> Участники </p>
+                        <p class="LL_count"> 2510 </p>
+                    </div>
+                    <div class="LL_federCount">
+                        <p> Турниры </p>
+                        <p class="LL_count"> 22 </p>
+                    </div>
+                    <div class="LL_federCount">
+                        <p> Новости </p>
+                        <p class="LL_count"> 30 </p>
+                    </div>
+                </div>
+                <div style="width: 100%">
+                    <p class="LL_caption" style="margin-left: 10px"> Название турнира</p>
+                </div>
+                <div style="width: 100%">
+                    <button type="button" class="button-fed">Принять участие</button>
+                </div>
+                <div style="width: 100%">
+                    <p style="margin-left: 10px"> Вид спорта </p>
+                </div>
+            </div>
+            <div id="fon">
+                <div></div>
+            </div>
+        </div>
+
+        <div style="width: 100%">
+            <div style="margin: 10px auto; width:90%; border:1px solid lightgrey; box-shadow:1px 1px 1px 1px darkgrey"></div>
+        </div>
+
+        <div class="LL_federationFolowers">
+            <div style="width:90%; margin: 0 auto">
+                <div class='LL_caption' style="float: left">Команды</div>
+                <div><button type="button" class="button-fed">Все команды</button></div>
+            </div>
+            <div style="width: 100%">
+                <div class="LL_federationFolower">
+                    <div>
+                        <div class="LL_folowerPhoto"><i class="fa fa-user" aria-hidden="true"></i></div>
+                    </div>
+                    <div>
+                        <p class="LL_folowerName">Название Команды</p>
+                        <p class="LL_folowerCount"> 122 Участников</p>
+                        <p class="LL_folowerCount"> 132 Турниров</p>
+                        <button type="button" class="button-little">Заявка</button>
+                    </div>
+                </div>
+                <div class="LL_federationFolower">
+                    <div>
+                        <div class="LL_folowerPhoto"><i class="fa fa-user" aria-hidden="true"></i></div>
+                    </div>
+                    <div>
+                        <p class="LL_folowerName">Название Команды</p>
+                        <p class="LL_folowerCount"> 122 Участников</p>
+                        <p class="LL_folowerCount"> 132 Турниров</p>
+                        <button type="button" class="button-little">Заявка</button>
+                    </div>
+                </div>
+                <div class="LL_federationFolower">
+                    <div>
+                        <div class="LL_folowerPhoto"><i class="fa fa-user" aria-hidden="true"></i></div>
+                    </div>
+                    <div>
+                        <p class="LL_folowerName">Название Команды</p>
+                        <p class="LL_folowerCount"> 122 Участников</p>
+                        <p class="LL_folowerCount"> 132 Турниров</p>
+                        <button type="button" class="button-little">Заявка</button>
+                    </div>
+                </div>
+                <div class="LL_federationFolower">
+                    <div>
+                        <div class="LL_folowerPhoto"><i class="fa fa-user" aria-hidden="true"></i></div>
+                    </div>
+                    <div>
+                        <p class="LL_folowerName">Название Команды</p>
+                        <p class="LL_folowerCount"> 122 Участников</p>
+                        <p class="LL_folowerCount"> 132 Турниров</p>
+                        <button type="button" class="button-little">Заявка</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="width: 100%">
+            <div style="margin: 10px auto; width:90%; border:1px solid lightgrey; box-shadow:1px 1px 1px 1px darkgrey"></div>
+        </div>
+    </div>
+
+
+    <div id="LL_right">
+        <div id="LL_stem"> </div>
+        <div id="LL_federEvents">
+            <div id="LL_federEventsTop" style="min-width: 550px; min-height: 45px">
+                <div style="width: 50%; float: left">
+                    <button type="button" id='LL_autoToss' class="button-fed" style="margin-left: 50px">Построить сетку</button>
+                </div>
+            </div>
+
+
+            <div id="minimal">
+                <div class="demo"></div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Modal window for federation's photo-->
+    <!--
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Логотип федерации</h4>
+                </div>
+
+                <div class="modal-body">
+                    <label for="LL_federationLogoToCrop" id="LL_testLabel" style="pointer-events: auto">
+                        <div id="LL_choosePhoto"> <p>Кликните, чтобы загрузить фото с вашего компьютера </p></div>
+
+                    </label>
+                    <input type="file" id="LL_federationLogoToCrop" style="display: none;">
+                </div>
+
+                <div class="modal-footer">
+                    <label for="LL_federationLogoToCrop2" id="LL_testLabel2" style="transform: none; left: 230px; text-align: center; display: none">
+                        <div type="button" class="button-fed">Другое фото</div>
+                    </label>
+                    <input type="file" id="LL_federationLogoToCrop2" style="display: none;">
+                    <button id="LL_buttonForSaveLogo" type="button-fed" class="button-fed" data-dismiss="modal">Сохранить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="text" style="display: none" id="x1" name="x1">
+    <input type="text" style="display: none" id="y1" name="y1">
+    <input type="text" style="display: none" id="width1" name="width1">
+    <input type="text" style="display: none" id="height1" name="height1">
+    <input type="text" style="display: none" id="image1" name="image1">
+    <input type="text" style="display: none" id="image2" name="image2">
+       -->
+</div>

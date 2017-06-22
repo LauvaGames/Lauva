@@ -1,0 +1,93 @@
+<div class="form" style="min-width: 450px">
+
+    <ul class="tab-group">
+        <li class="tab active"><a href="#login">Вход</a></li>
+        <li class="tab"><a href="#signup">Регистрация</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="login">
+            <h1>Добро пожаловать!</h1>
+            <form id="LL_loginForm" action="/" method="post">
+
+                <div class="field-wrap">
+                    <label>
+                        Email<span class="req">*</span>
+                    </label>
+                    <input id="LL_emailLogin" name="LL_emailLogin">
+                </div>
+                <div class="field-wrap">
+                    <label>
+                        Пароль<span class="req">*</span>
+                    </label>
+                    <input id="LL_password" type="password" name="LL_password">
+                </div>
+                <p class="forgot"><a href="/forgotPassword">Забыли пароль?</a></p>
+
+                <div>
+                    <button id="LL_loginButton" class="button button-block"/>Войти</button>
+
+                    <div id="LL_socCont">
+                        <div class='LL_socialNetworksLogo'><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                        <div class='LL_socialNetworksLogo'><i class="fa fa-vk" aria-hidden="true"></i></div>
+                        <div class='LL_socialNetworksLogo'><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                        <div class='LL_socialNetworksLogo'><i class="fa fa-google-plus" aria-hidden="true"></i></div>
+                    </div>
+                </div>
+
+
+            </form>
+
+
+        </div>
+
+        <div id="signup">
+            <h1>Зарегистрируйтесь, чтобы войти</h1>
+
+            <form id="LL_signup" action="/" method="post">
+
+                <div class="top-row">
+                    <div class="field-wrap">
+                        <label>
+                            Имя пользователя<span class="req">*</span>
+                        </label>
+                        <input id="LL_username" name="LL_username">
+                    </div>
+                    <div class="field-wrap">
+                        <label>
+                            Email <span class="req">*</span>
+                        </label>
+                        <input id="LL_email" name="LL_email" >
+                    </div>
+
+                </div>
+                <!--
+                <div class="field-wrap">
+                    <label class="active highlight">
+                        Телефон: (999)999-9999<span class="req">*</span>
+                    </label>
+                    <input type=text id="LL_phone" name="LL_phone" >
+                </div>
+                -->
+                <div class="field-wrap">
+                    <label>
+                        Пароль<span class="req">*</span>
+                    </label>
+                    <input type="password" id="LL_passwordSignup" name="LL_passwordSignup">
+                </div>
+                <div class="field-wrap">
+                    <label>
+                        Повторите пароль<span class="req">*</span>
+                    </label>
+                    <input type="password" id="LL_password2" name="LL_password2">
+                </div>
+
+                <button type="submit" class="button button-block"/>Готово</button>
+
+            </form>
+
+        </div>
+
+    </div><!-- tab-content -->
+
+</div> <!-- /form -->

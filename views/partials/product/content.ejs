@@ -1,0 +1,307 @@
+<div id="LL_left">
+
+    <div id="LL_firstCont">
+
+        <!-- My profile-->
+        <div class="LL_myProfile">
+            <ul class="LL-wrap-headers" id="LL_myProfile-head">
+                <li class="active"><a><%= user.profile.firstName%> <%= user.profile.lastName%></a></li>
+            </ul>
+            <div>
+                <div style="float: left">
+                    <% if (user.profile.avatar != '') {%>
+                        <div id="LL_myAvatar"> <img style="height: 100%; vertical-align:baseline " src="<%= user.profile.avatar %>">  </div>
+                    <% } else { %>
+                        <div id="LL_myAvatar"> <i class="fa fa-user" aria-hidden="true"></i></div>
+                    <% } %>
+                </div>
+                <div style="float: left">
+                    <ul id="LL_myProfile-settings">
+                        <li><a href="">Сообщения</a></li>
+                        <li><a href="">Оповещения</a> </li>
+                        <li><a href="">Достижения</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="LL_news1"> Новости </div>
+    </div>
+
+    <div id="LL_secondCont">
+        <!-- Federation -->
+        <div id="LL_federation">
+            <ul class="LL-wrap-headers">
+                <li class="LL_link active"><a href="#memberFederation">Участник</a></li>
+                <li class="LL_link"><a href="#myFederation" style="min-width: 115px; width: 31%">Председатель</a></li>
+                <li class="LL_link"><a href="/findFederation" style="width: 29%">Найти</a></li>
+                <li class="LL_link"><a data-toggle="modal" data-target="#myModal" style="width: 10%; min-width: 15px;"><i class="fa fa-plus-square" aria-hidden="true"></i></a></li>
+            </ul>
+
+            <div class="LL_link-content">
+                <div id="memberFederation">
+                    <% for(i=0; i<5; i++) { %>
+                        <div class="LL_federationName">
+                            Federation
+                        </div>
+                        <div class="LL_federationSportType">
+                            Sport type
+                        </div>
+                        <div class="LL_federationView">
+                            <i class="fa fa-eye" aria-hidden="true"  style="font-size:14px;"></i>
+                        </div>
+                    <% } %>
+                </div>
+
+                <div id="myFederation">
+                    <div class="LL_federationName">
+                        my Name
+                    </div>
+                    <div class="LL_federationSportType">
+                        my Sport
+                    </div>
+                    <div class="LL_federationView">
+                        <i class="fa fa-eye" aria-hidden="true"  style=" font-size:14px;"></i>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Team -->
+        <div id="LL_team">
+            <ul class="LL-wrap-headers" id="LL_team-head">
+                <li class="LL_linkTeam active"><a href="#memberTeam">Участник</a></li>
+                <li class="LL_linkTeam"><a href="#myTeam">Капитан</a></li>
+                <li class="LL_linkTeam"><a href="/findTeam">Найти</a></li>
+                <li class="LL_linkTeam"><a data-toggle="modal" data-target="#myModal2" style="width: 10%; min-width: 15px;"><i class="fa fa-plus-square" aria-hidden="true"></i></a></li>
+            </ul>
+
+            <div class="LL_linkTeam-content">
+                <div id="memberTeam">
+                    <% for(i=0; i<5; i++) { %>
+                        <div class="LL_teamName">
+                            Name
+                        </div>
+                        <div class="LL_teamSportType">
+                            Sport type
+                        </div>
+                        <div class="LL_teamView">
+                            <i class="fa fa-eye" aria-hidden="true"  style=" font-size:14px;"></i>
+                        </div>
+                    <% } %>
+                </div>
+
+                <div id="myTeam">
+                    <div class="LL_teamName">
+                        my Name
+                    </div>
+                    <div class="LL_teamSportType">
+                        my Sport
+                    </div>
+                    <div class="LL_teamView">
+                        <i class="fa fa-eye" aria-hidden="true"  style=" font-size:14px;"></i>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div id="LL_right">
+
+    <div id="LL_thirdCont">
+        <!-- Friends -->
+        <div id="LL_friends">
+            <ul class="LL-wrap-headers" id="LL_friends-head">
+                <li class="LL_linkFriends active"><a href="#memberFriends">Мои друзья</a></li>
+                <li class="LL_linkFriends"><a href="/findTournament">Найти</a></li>
+            </ul>
+
+            <div class="LL_linkFriends-content">
+                <div id="memberFriends">
+                    <% for(i=0; i<5; i++) { %>
+                        <div class="LL_friendstAvatar">
+                            <div></div>
+                        </div>
+                    <% if(i%2 == 1) { %>
+                        <div class="LL_friendsOnline">
+                            <i class="fa fa-user-circle" aria-hidden="true"></i>
+                        </div>
+                    <% } else {%>
+                        <div class="LL_friendsOnline">
+                            <i class="fa fa-circle" aria-hidden="true"></i>
+                        </div>
+                    <% } %>
+                        <div class="LL_friendsName">
+                            User Name
+                        </div>
+                        <div class="LL_friendsMessage">
+                            <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tournament -->
+        <div id="LL_tournament">
+            <ul class="LL-wrap-headers" id="LL_tournament-head">
+                <li class="LL_linkTournament active"><a href="#memberTournament">Участник</a></li>
+                <li class="LL_linkTournament"><a href="/findTournament">Найти</a></li>
+            </ul>
+
+            <div class="LL_linkTournament-content">
+                <div id="memberTournament">
+                    <% for(i=0; i<5; i++) { %>
+
+                    <div class="LL_tournamentName">
+                        Tournament
+                    </div>
+                    <div class="LL_tournamentSportType">
+                        Sport type
+                    </div>
+                    <div class="LL_tournamentDate">
+                        01.03.17
+                    </div>
+
+                    <% } %>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="LL_fourthCont">
+
+        <div id="LL_ad"> AD </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- Modal window for federation-->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog" id="LL_createFederationModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Создание федерации</h4>
+            </div>
+
+            <div class="modal-body" style="width: 500px; height:auto; padding:40px">
+                <form id="LL_createFederationForm" action="/" method="post">
+
+                    <div class="field-wrap">
+                        <label>
+                            Название федерации<span class="req">*</span>
+                        </label>
+                        <input type=text id="LL_federName" name="LL_federName" >
+                    </div>
+                    <div class="field-wrap">
+                        <select  name="LL_federSport" id="LL_federSport">
+                            <% for(var i=0; i<sport.length; i++) {%>
+                                <option value='<%= sport[i].value%>'><%= sport[i].value %></option>
+                            <% } %>
+                        </select>
+                    </div>
+
+                    <div class="field-wrap">
+                        <label>
+                            Описание<span class="req">*</span>
+                        </label>
+                        <textarea type="text" id="LL_federDesc" name="LL_federDesc"></textarea>
+                    </div>
+                    <div class="top-row">
+                        <div class="field-wrap">
+                            <select name="LL_country" id="LL_country">
+                                <% for(var i=0; i<countries.length; i++) {%>
+                                    <% if(countries[i].name == c) { %>
+                                        <option selected value="<%= countries[i].name %>" data-id="<%= countries[i].country_id %>"><%= countries[i].name %></option>
+                                    <% }else{ %>
+                                        <option value="<%= countries[i].name %>" data-id="<%= countries[i].country_id %>"><%= countries[i].name %></option>
+                                    <% } %>
+                                <% } %>
+                            </select>
+                        </div>
+                        <div class="field-wrap">
+                            <select name="LL_city" id="LL_city">
+                            </select>
+                        </div>
+
+                    </div>
+                    <button id="LL_createFederation" type="submit" class="button button-block"/>Сохранить</button>
+
+                </form>
+            </div>
+            <!--
+            <div class="modal-footer">
+                <button id="LL_buttonForSaveUserPhoto" type="button" class="button button-block" ></button>
+            </div>
+            -->
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal window for team-->
+<div id="myModal2" class="modal fade" role="dialog">
+    <div class="modal-dialog" style="width: 500px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Создание команды</h4>
+            </div>
+
+            <div class="modal-body" style="width: 500px; height:auto; padding:40px">
+                <form id="LL_createTeamForm" action="/" method="post">
+
+                    <div class="field-wrap">
+                        <label>
+                            Название команды<span class="req">*</span>
+                        </label>
+                        <input type=text id="LL_teamName" name="LL_teamName" >
+                    </div>
+                    <div class="field-wrap">
+                        <select  name="LL_teamSport" id="LL_teamSport">
+                            <% for(var i=0; i<sport.length; i++) {%>
+                                <option value='<%= sport[i].value%>'><%= sport[i].value %></option>
+                            <% } %>
+                        </select>
+                    </div>
+
+                    <div class="field-wrap">
+                        <label>
+                            Описание<span class="req">*</span>
+                        </label>
+                        <textarea type="text" id="LL_teamDesc" name="LL_teamDesc"></textarea>
+                    </div>
+                    <div class="top-row">
+                        <div class="field-wrap">
+                            <select name="LL_teamCountry" id="LL_teamCountry">
+                                <% for(var i=0; i<countries.length; i++) {%>
+                                    <% if(countries[i].name == c) { %>
+                                        <option selected value="<%= countries[i].name %>" data-id="<%= countries[i].country_id %>"><%= countries[i].name %></option>
+                                    <% }else{ %>
+                                        <option value="<%= countries[i].name %>" data-id="<%= countries[i].country_id %>"><%= countries[i].name %></option>
+                                    <% } %>
+                                <% } %>
+                            </select>
+                        </div>
+                        <div class="field-wrap">
+                            <select name="LL_teamCity" id="LL_teamCity">
+                            </select>
+                        </div>
+
+                    </div>
+                    <button id="LL_createTeam" type="submit" class="button button-block"/>Сохранить</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

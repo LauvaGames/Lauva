@@ -1,0 +1,620 @@
+$body-bg: #c1bdba;
+$form-bg: #13232f;
+$white: #ffffff;
+
+$main: #1ab188;
+$main-light: lighten($main,5%);
+$main-dark: darken($main,5%);
+
+$gray-light: #a0b3b0;
+$gray: #ddd;
+
+$thin: 300;
+$normal: 400;
+$bold: 600;
+$br: 4px;
+
+#LL_body{
+  background-image: url("http://95.46.99.158:4000/public/images/bg.png");
+  margin:0;
+  padding:0;
+  max-width: 100vw;
+  height: 100vh;
+}
+#LL_header {
+  background-color: #142030;
+  max-width: 100vw;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  color: #7f8c9d;
+}
+#LL_logo{
+  margin: 5px;
+  margin-left: 15px;
+  width: 50px;
+  height: 50px;
+}
+#LL_userInform {
+  display: none;
+  margin: 5px 25px 5px auto;
+  height: 50px;
+  width: 130px;
+  font-size: 17px;
+  &:hover {
+    background: rgba(30, 52, 72, 0.8);
+    color: white;
+    cursor: pointer;
+  }
+}
+#LL_userFoto {
+  margin: 0 5px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  float: left;
+  color: $main;
+  border: 1px solid $main;
+  font-size: 40px;
+  text-align: center;
+}
+#LL_topNav {
+  margin-top: 20px;
+  width: 130px;
+  padding-left: 5px;
+  background: rgba(30, 52, 72, 0.8);
+  display: block;
+  display: none;
+  list-style: none;
+  line-height: 30px;
+  > li {
+    display: block;
+    &:hover {
+      background: rgb(30, 52, 72);
+      color: white;
+      cursor: pointer;
+    }
+  }
+  > li a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+#LL_textLogo {
+  width: 15vh;
+}
+
+#LL_navigation {
+  margin-top: 100px;
+}
+.LL_navContainer{
+  //position: fixed;
+  width: 40px;
+  height: 40px;
+  margin-top: 20px;
+  background-color: #182838;
+  color: #1ab188;
+  text-align: center;
+}
+
+#LL_content {
+    width: 96vw;
+    color: #44494f;
+    font-family: 'Tahoma', "Geneva CY", sans-serif;
+}
+
+
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+a {
+  text-decoration:none;
+  color:$main;
+  transition:.5s ease;
+  &:hover {
+    color:$main-dark;
+  }
+}
+
+.form {
+  background:rgba($form-bg,.9);
+  padding: 40px;
+  max-width:550px;
+  margin:40px auto;
+  border-radius:$br;
+  box-shadow:0 4px 10px 4px rgba($form-bg,.3);
+}
+#LL_loginForm{
+  min-height: 210px
+}
+.tab-group {
+  list-style:none;
+  padding:0;
+  margin:0 0 30px 0;
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  li a {
+    display:block;
+    text-decoration:none;
+    padding:15px;
+    background:rgba($gray-light,.25);
+    color:$gray-light;
+    font-size:17px;
+    float:left;
+    width:50%;
+    text-align:center;
+    cursor:pointer;
+    transition:.5s ease;
+    &:hover {
+      background:$main-dark;
+      color:$white;
+    }
+  }
+  .active a {
+    background:$main;
+    color:$white;
+  }
+}
+
+.tab-content > div:last-child {
+  display:none;
+}
+
+
+h1 {
+  font-size: 17px;
+  text-align:center;
+  color:$white;
+  font-weight: 600;
+  margin:0 0 30px;
+}
+
+label {
+  position:absolute;
+  transform:translateY(6px);
+  left:13px;
+  color:rgba($white,.5);
+  transition:all 0.25s ease;
+  -webkit-backface-visibility: hidden;
+  pointer-events: none;
+  font-size:17px;
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 0px;
+  font-weight: 500;
+  .req {
+    margin:2px;
+    color:$main;
+  }
+}
+
+label.active {
+  transform:translateY(-20px);
+  left:2px;
+  font-size:13px;
+  .req {
+    opacity:0;
+  }
+}
+
+label.highlight {
+  color:$white;
+}
+label.error {
+  font-size: 0.8em;
+  color: red;
+  //padding-left: 50%;
+}
+input.error {
+  border-color: red;
+}
+
+input, textarea, select {
+  font-size:17px;
+  display:block;
+  width:100%;
+  height:100%;
+  padding:5px 10px;
+  background:none;
+  background-image:none;
+  border:1px solid $gray-light;
+  color:$white;
+  border-radius:0;
+  transition:border-color .25s ease, box-shadow .25s ease;
+  &:focus {
+    outline:0;
+    border-color:$main;
+  }
+}
+option {
+  background-color: $form-bg;
+}
+
+.country-phone-selected {
+  padding-right: 10px;
+  font-size: 17px;
+  color: $gray-light;
+  > img{
+    margin-top: 6px;
+  }
+}
+.country-phone-options{
+  margin-top: 40px;
+}
+.country-phone-search-label {
+  margin-top: -30px;
+  font-size: 17px;
+}
+
+
+textarea {
+  border:2px solid $gray-light;
+  resize: vertical;
+}
+
+.field-wrap {
+  position:relative;
+  margin-bottom:40px;
+}
+
+.top-row {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  > div {
+    float:left;
+    width:48%;
+    margin-right:4%;
+    &:last-child {
+      margin:0;
+    }
+  }
+}
+
+.button {
+  border:0;
+  outline:none;
+  border-radius:0;
+  padding:15px 0;
+  font-size:17px;
+  font-weight: 600;
+  background:$main;
+  color:$white;
+  transition:all.5s ease;
+  -webkit-appearance: none;
+  &:hover, &:focus {
+    background:$main-dark;
+  }
+}
+
+.button-block {
+  display:block;
+  width:50%;
+  margin: 0 auto;
+}
+#LL_loginButton {
+  float: left;
+}
+#LL_socCont {
+  width: 50%;
+  float:left
+}
+
+.forgot {
+  margin-top:-20px;
+  text-align:right;
+}
+
+li.LL_nav {
+  display: inline-block;
+  list-style: none;
+  width: 8vh;
+  text-align: center;
+}
+div.LL_navPopup {
+  display: none;
+  align-items: center;
+  height: 6vh;
+  width: 100px;
+  background-color: red;
+}
+.LL_icon {
+  font-size: 6vh;
+  display: block;
+}
+.LL_menu{
+  padding: 0;
+}
+
+
+/*** MULTISELECT ***/
+.k-multiselect, .k-header, input.k-textbox, textarea.k-textbox {
+  border-radius: 0;
+  border: none;
+}
+.k-multiselect-wrap, .k-floatwrap {
+  background:rgba($form-bg,.9);
+}
+
+.k-input, .k-multiselect-wrap, .k-textbox>input, input.k-textbox, input.k-textbox:hover, textarea.k-textbox, textarea.k-textbox:hover {
+  background:rgba($form-bg,.9);
+  border:1px solid $gray-light;
+    &:focus {
+      outline:0;
+      border-color:$main;
+    }
+  border-radius: 0;
+  color:$gray-light;
+}
+.k-state-selected, .k-list>.k-state-selected, .k-widget.k-tooltip-validation {
+  background-color: $main;
+  border-color: $main;
+}
+.k-icon, .k-clear-value, .k-i-close {
+  color:$gray-light;
+  &:hover, &:focus {
+    color:$gray-light;
+  }
+}
+.k-button {
+  background-color: $main;
+  color: $white;
+}
+.k-list-scroller {
+  background: $form-bg;
+  color: $white;
+}
+.k-button {
+  border: none;
+  border-radius: 0;
+}
+
+
+
+//*** EDIT PROFILE ***//
+#LL_profileDiv {
+  max-width: 800px;
+  min-width: 450px;
+}
+#LL_lastName, #LL_firstName, #LL_email, #LL_phone, #LL_login{
+  width:100%;
+  margin-right:4%;
+}
+#test {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  > div {
+    float:left;
+    width:48%;
+    margin-right:4%;
+    &:last-child {
+      margin:0;
+    }
+  }
+}
+#LL_profileButton{
+  width:33%;
+  margin: 0 auto;
+}
+
+
+/*** MODAL WINDOW***/
+.modal-title {
+  text-align: center;
+  font-size: 17px;
+  color: $gray-light;
+}
+.modal-content {
+  background:rgba($form-bg,.9);
+}
+.modal-dialog{
+  width: 800px;
+}
+.modal-body{
+  padding: 0px;
+  width: 798px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  > label {
+    display: flex;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+  }
+  > img {
+    display: flex;
+    height: 90%;
+  }
+  > div {
+    display: flex;
+    height: 90%;
+  }
+}
+
+#LL_choosePhoto {
+  margin: 189px auto;
+  color: $gray-light;
+  font-size: 17px;
+  text-align: center;
+}
+
+#LL_buttonForSaveUserPhoto {
+  width: 200px;
+  font-size:17px;
+  font-weight: 500;
+  text-transform: none;
+  margin-right: 20px;
+  margin-left: auto;
+  padding:15px auto;
+}
+#LL_buttonToChangeUserPhoto {
+  background:$main;
+  color:$white;
+  width: 300px;
+  font-size:17px;
+  font-weight: 500;
+  text-transform: none;
+  margin-right: 20px;
+  padding:15px auto;
+  display: block;
+  border:0;
+  outline:none;
+  border-radius:0;
+  letter-spacing:.1em;
+  transition:all.5s ease;
+  -webkit-appearance: none;
+  &:hover, &:focus {
+    background:$main-dark;
+    cursor: pointer;
+  }
+}
+.jcrop-keymgr {
+  opacity: 0;
+}
+.LL_logoLink {
+  display: flex;
+  align-items: center;
+  &:hover, &:focus {
+    text-decoration: none;
+  }
+}
+
+.LL_socialNetworksLogo {
+  width: 25%;
+  height: 54px;
+  font-size: 34px;
+  color: $main;
+  text-align: right;
+  float: left;
+  &:hover, &:focus {
+    cursor: pointer;
+    color: $white;
+  }
+}
+
+#LL_posterForUserPhoto {
+  width:345px;
+  height: 345px;
+  font-size: 20em;
+  text-align: center;
+  color: $main;
+  border: 1px solid $main;
+  &:hover, &:focus {
+    cursor: pointer;
+    color: $white;
+  }
+}
+
+
+
+@media screen and (max-width: 800px) {
+  #LL_posterForUserPhoto {
+    margin: 0 auto;
+  }
+  .top-row {
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    > div {
+      float: left;
+      width: 75%;
+      &:last-child {
+        margin-bottom: 40px;
+      }
+    }
+  }
+  #test {
+    > div {
+      float: left;
+      width: 75%;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .fw {
+    width: 75%;
+  }
+  #LL_loginButton {
+    width: 100%;
+  }
+  .LL_socialNetworksLogo {
+    margin-top: 15px;
+  }
+  #LL_loginForm{
+    min-height: 230px
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #LL_navigation {
+    display: none;
+  }
+  #LL_LauvaCaption {
+    display: none;
+  }
+  .LL_socialNetworksLogo {
+    float: left;
+    text-align: center;
+    margin-top: 15px;
+  }
+  #LL_socCont {
+    width: auto;
+    float: none;
+  }
+  .top-row {
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    > div {
+      float:left;
+      width:100%;
+      &:last-child {
+        margin-bottom:40px;
+      }
+    }
+  }
+  h1 {
+    font-size: 17px;
+  }
+  #test {
+    > div {
+      float:left;
+      width:100%;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  #LL_posterForUserPhoto {
+    margin: 0 auto;
+  }
+  .fw {
+    width: 100%;
+  }
+}

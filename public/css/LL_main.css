@@ -1,0 +1,510 @@
+#LL_body {
+  background-image: url("http://95.46.99.158:4000/publ/images/bg.png");
+  margin: 0;
+  padding: 0;
+  max-width: 100vw;
+  height: 100vh; }
+
+#LL_header {
+  background-color: #142030;
+  max-width: 100vw;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  color: #7f8c9d; }
+
+#LL_logo {
+  margin: 5px;
+  margin-left: 15px;
+  width: 50px;
+  height: 50px; }
+
+#LL_userInform {
+  display: none;
+  margin: 5px 25px 5px auto;
+  height: 50px;
+  width: 130px;
+  font-size: 17px; }
+  #LL_userInform:hover {
+    background: rgba(30, 52, 72, 0.8);
+    color: white;
+    cursor: pointer; }
+
+#LL_userFoto {
+  margin: 0 5px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  float: left;
+  color: #1ab188;
+  border: 1px solid #1ab188;
+  font-size: 40px;
+  text-align: center; }
+
+#LL_topNav {
+  margin-top: 20px;
+  width: 130px;
+  padding-left: 5px;
+  background: rgba(30, 52, 72, 0.8);
+  display: block;
+  display: none;
+  list-style: none;
+  line-height: 30px; }
+  #LL_topNav > li {
+    display: block; }
+    #LL_topNav > li:hover {
+      background: #1e3448;
+      color: white;
+      cursor: pointer; }
+  #LL_topNav > li a {
+    color: white;
+    text-decoration: none; }
+
+#LL_textLogo {
+  width: 15vh; }
+
+#LL_navigation {
+  margin-top: 100px; }
+
+.LL_navContainer {
+  width: 40px;
+  height: 40px;
+  margin-top: 20px;
+  background-color: #182838;
+  color: #1ab188;
+  text-align: center; }
+
+#LL_content {
+  width: 96vw;
+  color: #44494f;
+  font-family: 'Tahoma', "Geneva CY", sans-serif; }
+
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+html {
+  overflow-y: scroll; }
+
+a {
+  text-decoration: none;
+  color: #1ab188;
+  transition: .5s ease; }
+  a:hover {
+    color: #179b77; }
+
+.form {
+  background: rgba(19, 35, 47, 0.9);
+  padding: 40px;
+  max-width: 550px;
+  margin: 40px auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3); }
+
+#LL_loginForm {
+  min-height: 210px; }
+
+.tab-group {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0; }
+  .tab-group:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .tab-group li a {
+    display: block;
+    text-decoration: none;
+    padding: 15px;
+    background: rgba(160, 179, 176, 0.25);
+    color: #a0b3b0;
+    font-size: 17px;
+    float: left;
+    width: 50%;
+    text-align: center;
+    cursor: pointer;
+    transition: .5s ease; }
+    .tab-group li a:hover {
+      background: #179b77;
+      color: #ffffff; }
+  .tab-group .active a {
+    background: #1ab188;
+    color: #ffffff; }
+
+.tab-content > div:last-child {
+  display: none; }
+
+h1 {
+  font-size: 17px;
+  text-align: center;
+  color: #ffffff;
+  font-weight: 600;
+  margin: 0 0 30px; }
+
+label {
+  position: absolute;
+  transform: translateY(6px);
+  left: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  transition: all 0.25s ease;
+  -webkit-backface-visibility: hidden;
+  pointer-events: none;
+  font-size: 17px;
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 0px;
+  font-weight: 500; }
+  label .req {
+    margin: 2px;
+    color: #1ab188; }
+
+label.active {
+  transform: translateY(-20px);
+  left: 2px;
+  font-size: 13px; }
+  label.active .req {
+    opacity: 0; }
+
+label.highlight {
+  color: #ffffff; }
+
+label.error {
+  font-size: 0.8em;
+  color: red; }
+
+input.error {
+  border-color: red; }
+
+input, textarea, select {
+  font-size: 17px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 5px 10px;
+  background: none;
+  background-image: none;
+  border: 1px solid #a0b3b0;
+  color: #ffffff;
+  border-radius: 0;
+  transition: border-color .25s ease, box-shadow .25s ease; }
+  input:focus, textarea:focus, select:focus {
+    outline: 0;
+    border-color: #1ab188; }
+
+option {
+  background-color: #13232f; }
+
+.country-phone-selected {
+  padding-right: 10px;
+  font-size: 17px;
+  color: #a0b3b0; }
+  .country-phone-selected > img {
+    margin-top: 6px; }
+
+.country-phone-options {
+  margin-top: 40px; }
+
+.country-phone-search-label {
+  margin-top: -30px;
+  font-size: 17px; }
+
+textarea {
+  border: 2px solid #a0b3b0;
+  resize: vertical; }
+
+.field-wrap {
+  position: relative;
+  margin-bottom: 40px; }
+
+.top-row:after {
+  content: "";
+  display: table;
+  clear: both; }
+.top-row > div {
+  float: left;
+  width: 48%;
+  margin-right: 4%; }
+  .top-row > div:last-child {
+    margin: 0; }
+
+.button {
+  border: 0;
+  outline: none;
+  border-radius: 0;
+  padding: 15px 0;
+  font-size: 17px;
+  font-weight: 600;
+  background: #1ab188;
+  color: #ffffff;
+  transition: all 0.5s ease;
+  -webkit-appearance: none; }
+  .button:hover, .button:focus {
+    background: #179b77; }
+
+.button-block {
+  display: block;
+  width: 50%;
+  margin: 0 auto; }
+
+#LL_loginButton {
+  float: left; }
+
+#LL_socCont {
+  width: 50%;
+  float: left; }
+
+.forgot {
+  margin-top: -20px;
+  text-align: right; }
+
+li.LL_nav {
+  display: inline-block;
+  list-style: none;
+  width: 8vh;
+  text-align: center; }
+
+div.LL_navPopup {
+  display: none;
+  align-items: center;
+  height: 6vh;
+  width: 100px;
+  background-color: red; }
+
+.LL_icon {
+  font-size: 6vh;
+  display: block; }
+
+.LL_menu {
+  padding: 0; }
+
+/*** MULTISELECT ***/
+.k-multiselect, .k-header, input.k-textbox, textarea.k-textbox {
+  border-radius: 0;
+  border: none; }
+
+.k-multiselect-wrap, .k-floatwrap {
+  background: rgba(19, 35, 47, 0.9); }
+
+.k-input, .k-multiselect-wrap, .k-textbox > input, input.k-textbox, input.k-textbox:hover, textarea.k-textbox, textarea.k-textbox:hover {
+  background: rgba(19, 35, 47, 0.9);
+  border: 1px solid #a0b3b0;
+  border-radius: 0;
+  color: #a0b3b0; }
+  .k-input:focus, .k-multiselect-wrap:focus, .k-textbox > input:focus, input.k-textbox:focus, input.k-textbox:hover:focus, textarea.k-textbox:focus, textarea.k-textbox:hover:focus {
+    outline: 0;
+    border-color: #1ab188; }
+
+.k-state-selected, .k-list > .k-state-selected, .k-widget.k-tooltip-validation {
+  background-color: #1ab188;
+  border-color: #1ab188; }
+
+.k-icon, .k-clear-value, .k-i-close {
+  color: #a0b3b0; }
+  .k-icon:hover, .k-icon:focus, .k-clear-value:hover, .k-clear-value:focus, .k-i-close:hover, .k-i-close:focus {
+    color: #a0b3b0; }
+
+.k-button {
+  background-color: #1ab188;
+  color: #ffffff; }
+
+.k-list-scroller {
+  background: #13232f;
+  color: #ffffff; }
+
+.k-button {
+  border: none;
+  border-radius: 0; }
+
+#LL_profileDiv {
+  max-width: 800px;
+  min-width: 450px; }
+
+#LL_lastName, #LL_firstName, #LL_email, #LL_phone, #LL_login {
+  width: 100%;
+  margin-right: 4%; }
+
+#test:after {
+  content: "";
+  display: table;
+  clear: both; }
+#test > div {
+  float: left;
+  width: 48%;
+  margin-right: 4%; }
+  #test > div:last-child {
+    margin: 0; }
+
+#LL_profileButton {
+  width: 33%;
+  margin: 0 auto; }
+
+/*** MODAL WINDOW***/
+.modal-title {
+  text-align: center;
+  font-size: 17px;
+  color: #a0b3b0; }
+
+.modal-content {
+  background: rgba(19, 35, 47, 0.9); }
+
+.modal-dialog {
+  width: 800px; }
+
+.modal-body {
+  padding: 0px;
+  width: 798px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .modal-body > label {
+    display: flex;
+    left: 0px;
+    height: 100%;
+    width: 100%; }
+  .modal-body > img {
+    display: flex;
+    height: 90%; }
+  .modal-body > div {
+    display: flex;
+    height: 90%; }
+
+#LL_choosePhoto {
+  margin: 189px auto;
+  color: #a0b3b0;
+  font-size: 17px;
+  text-align: center; }
+
+#LL_buttonForSaveUserPhoto {
+  width: 200px;
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: none;
+  margin-right: 20px;
+  margin-left: auto;
+  padding: 15px auto; }
+
+#LL_buttonToChangeUserPhoto {
+  background: #1ab188;
+  color: #ffffff;
+  width: 300px;
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: none;
+  margin-right: 20px;
+  padding: 15px auto;
+  display: block;
+  border: 0;
+  outline: none;
+  border-radius: 0;
+  letter-spacing: .1em;
+  transition: all 0.5s ease;
+  -webkit-appearance: none; }
+  #LL_buttonToChangeUserPhoto:hover, #LL_buttonToChangeUserPhoto:focus {
+    background: #179b77;
+    cursor: pointer; }
+
+.jcrop-keymgr {
+  opacity: 0; }
+
+.LL_logoLink {
+  display: flex;
+  align-items: center; }
+  .LL_logoLink:hover, .LL_logoLink:focus {
+    text-decoration: none; }
+
+.LL_socialNetworksLogo {
+  width: 25%;
+  height: 54px;
+  font-size: 34px;
+  color: #1ab188;
+  text-align: right;
+  float: left; }
+  .LL_socialNetworksLogo:hover, .LL_socialNetworksLogo:focus {
+    cursor: pointer;
+    color: #ffffff; }
+
+#LL_posterForUserPhoto {
+  width: 345px;
+  height: 345px;
+  font-size: 20em;
+  text-align: center;
+  color: #1ab188;
+  border: 1px solid #1ab188; }
+  #LL_posterForUserPhoto:hover, #LL_posterForUserPhoto:focus {
+    cursor: pointer;
+    color: #ffffff; }
+
+@media screen and (max-width: 800px) {
+  #LL_posterForUserPhoto {
+    margin: 0 auto; }
+
+  .top-row:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .top-row > div {
+    float: left;
+    width: 75%; }
+    .top-row > div:last-child {
+      margin-bottom: 40px; }
+
+  #test > div {
+    float: left;
+    width: 75%; }
+    #test > div:last-child {
+      margin-bottom: 0; }
+
+  .fw {
+    width: 75%; }
+
+  #LL_loginButton {
+    width: 100%; }
+
+  .LL_socialNetworksLogo {
+    margin-top: 15px; }
+
+  #LL_loginForm {
+    min-height: 230px; } }
+@media screen and (max-width: 600px) {
+  #LL_navigation {
+    display: none; }
+
+  #LL_LauvaCaption {
+    display: none; }
+
+  .LL_socialNetworksLogo {
+    float: left;
+    text-align: center;
+    margin-top: 15px; }
+
+  #LL_socCont {
+    width: auto;
+    float: none; }
+
+  .top-row:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .top-row > div {
+    float: left;
+    width: 100%; }
+    .top-row > div:last-child {
+      margin-bottom: 40px; }
+
+  h1 {
+    font-size: 17px; }
+
+  #test > div {
+    float: left;
+    width: 100%; }
+    #test > div:last-child {
+      margin-bottom: 0; }
+
+  #LL_posterForUserPhoto {
+    margin: 0 auto; }
+
+  .fw {
+    width: 100%; } }
+
+/*# sourceMappingURL=LL_main.css.map */

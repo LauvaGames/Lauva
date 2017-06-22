@@ -1,0 +1,179 @@
+<div id='LL_profileDiv' class="form">
+    <div class="tab-content">
+        <div>
+            <h1>Информация о пользователе</h1>
+            <form id="LL_profileForm" action="/" method="post">
+                <div id="test">
+                    <div style="position: relative">
+                        <div class="field-wrap">
+                            <% if ( user.profile.avatar != '') { %>
+                                <div id='LL_posterForUserPhoto' style="background-image: url(<%= user.profile.avatar %>); background-size: cover; background-repeat: no-repeat" data-toggle="modal" data-target="#myModal"></div>
+                                <input id='photo_adress' type="text" value="<%= user.profile.avatar%>" style="display: none" >
+                            <% } else { %>
+                                <div id='LL_posterForUserPhoto' data-toggle="modal" data-target="#myModal">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                </div>
+                                <input id='photo_adress' type="text" style="display: none" >
+                            <% } %>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="field-wrap">
+                            <%if (user.profile.lastName != '') {%>
+                                <input id="LL_lastName" name="LL_lastName" value="<%= user.profile.lastName%>">
+                            <% } else {%>
+                                <label>
+                                    Фамилия<span class="req">*</span>
+                                </label>
+                                <input id="LL_lastName" name="LL_lastName">
+                            <% } %>
+                        </div>
+                        <div class="field-wrap">
+                            <%if (user.profile.firstName != '') {%>
+                                <input id="LL_firstName" name="LL_firstName" value="<%= user.profile.firstName%>">
+                            <% } else {%>
+                                <label>
+                                    Имя<span class="req">*</span>
+                                </label>
+                                <input id="LL_firstName" name="LL_firstName">
+                            <% } %>
+                        </div>
+                        <div class="field-wrap">
+                            <input id="LL_email" name="LL_email" value="<%= user.email%>">
+                        </div>
+                        <div class="field-wrap" >
+                            <%if (user.profile.phone != '') {%>
+                                <input id="LL_phone" name="LL_phone" value="<%= user.profile.phone%>">
+                            <% } else {%>
+                                <label>
+                                    Телефон
+                                </label>
+                                <input id="LL_phone" name="LL_phone">
+                            <% } %>
+                        </div>
+                        <div class="field-wrap">
+                            <input id="LL_username" name="LL_username" value="<%= user.username%>">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="top-row">
+                    <div class="field-wrap">
+                        <select name="LL_country" id="LL_country">
+                            <% for(var i=0; i<countries.length; i++) {%>
+                                <% if(countries[i].name == c) { %>
+                                    <option selected value="<%= countries[i].name %>" data-id="<%= countries[i].country_id %>"><%= countries[i].name %></option>
+                                <% }else{ %>
+                                    <option value="<%= countries[i].name %>" data-id="<%= countries[i].country_id %>"><%= countries[i].name %></option>
+                                <% } %>
+                            <% } %>
+                        </select>
+                    </div>
+                    <div class="field-wrap">
+                        <select name="LL_city" id="LL_city">
+                        </select>
+                    </div>
+                </div>
+                <div class="top-row">
+                    <div class="field-wrap">
+                        <select multiple="multiple" data-placeholder="Ваш любимый вид спорта..." name="LL_sport" id="LL_sport">
+
+                            <% if (usersport == undefined) { %>
+                                <% for(var i=0; i<sport.length; i++) {%>
+                                    <% for (var j=0; j<usersport.length; j++) { %>
+                                        <% if (sport[i].value == usersport[j]) { %>
+                                            <option selected value='<%= sport[i].value%>'><%= sport[i].value %></option>
+                                        <% } else { %>
+                                            <option value='<%= sport[i].value%>'><%= sport[i].value %></option>
+                                        <% } %>
+                                    <% } %>
+                                <% } %>
+                            <% } else { %>
+                                <% for(var i=0; i<sport.length; i++) {%>
+                                    <option value='<%= sport[i].value %>'><%= sport[i].value %></option>
+                                <% } %>
+                            <% } %>
+                        </select>
+                    </div>
+                    <div class="field-wrap">
+                        <select multiple="multiple" data-placeholder="Выберите язык..." name="LL_languages" id="LL_languages">
+                            <% for(var i=0; i<lang.length; i++) {%>
+                                <option value='<%= lang[i].language %>'><%= lang[i].language %></option>
+                            <% } %>
+                        </select>
+                    </div>
+                </div>
+                <div class="field-wrap fw">
+                    <%if (user.profile.work != '') {%>
+                        <input id="LL_work" name="LL_work" value="<%= user.profile.work%>">
+                    <% } else {%>
+                        <label>
+                            Место работы
+                        </label>
+                        <input id="LL_work" name="LL_work">
+                    <% } %>
+                </div>
+                <div class="top-row">
+                    <div class="field-wrap">
+                        <%if (user.profile.skype != '') {%>
+                            <input id="LL_skype" name="LL_skype" value="<%= user.profile.skype%>">
+                        <% } else {%>
+                            <label>
+                                Skype
+                            </label>
+                            <input id="LL_skype" name="LL_skype">
+                        <% } %>
+                    </div>
+                    <div class="field-wrap">
+                        <%if (user.profile.insta != '') {%>
+                            <input id="LL_instagram" name="LL_instagram" value="<%= user.profile.insta%>">
+                        <% } else {%>
+                            <label>
+                                Instagram
+                            </label>
+                            <input id="LL_instagram" name="LL_instagram">
+                        <% } %>
+                    </div>
+                </div>
+                <p class="forgot"><a href="/changePassword">Изменить пароль</a></p>
+                <button id="LL_profileButton" class="button button-block" style="min-width: 150px"/>Сохранить</button>
+            </form>
+        </div>
+        <div></div>
+
+        <!-- Modal window for user's photo-->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Фото пользователя</h4>
+                    </div>
+
+                    <div class="modal-body">
+                        <label for="LL_userPhotoToCrop" id="LL_testLabel" style="pointer-events: auto">
+                            <div id="LL_choosePhoto"> <p>Кликните, чтобы загрузить фото с вашего компьютера </p></div>
+
+                        </label>
+                        <input type="file" id="LL_userPhotoToCrop" style="display: none;">
+                    </div>
+
+                    <div class="modal-footer">
+                        <label for="LL_userPhotoToCrop2" id="LL_testLabel2" style="transform: none; left: 230px; text-align: center; display: none; pointer-events: auto;">
+                            <div id="LL_buttonToChangeUserPhoto" type="button" class="button button-block">Выбрать другое фото</div>
+                        </label>
+                        <input type="file" id="LL_userPhotoToCrop2" style="display: none;">
+                        <button id="LL_buttonForSaveUserPhoto" type="button" class="button button-block" data-dismiss="modal">Сохранить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input type="text" style="display: none" id="x1" name="x1">
+        <input type="text" style="display: none" id="y1" name="y1">
+        <input type="text" style="display: none" id="width1" name="width1">
+        <input type="text" style="display: none" id="height1" name="height1">
+        <input type="text" style="display: none" id="image1" name="image1">
+        <input type="text" style="display: none" id="image2" name="image2">
+
+    </div><!-- tab-content -->
+</div> <!-- /form -->

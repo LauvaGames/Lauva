@@ -1,0 +1,384 @@
+#LL_content {
+  width: 100%;
+  min-width: 400px; }
+
+#LL_left {
+  float: left;
+  width: 54%;
+  min-width: 729px; }
+
+#LL_right {
+  float: left;
+  width: 45%;
+  min-width: 620px; }
+
+#LL_firstCont, #LL_secondCont, #LL_thirdCont, #LL_fourthCont {
+  margin-left: 15px;
+  float: left; }
+
+#LL_firstCont {
+  width: 320px; }
+
+#LL_secondCont {
+  width: calc(100% - 350px);
+  min-width: 350px; }
+
+#LL_thirdCont {
+  width: calc((100% - 40px)/2);
+  min-width: 280px; }
+
+#LL_fourthCont {
+  width: calc((100% - 30px)/2);
+  min-width: 300px; }
+
+.LL_myProfile {
+  background-color: rgba(30, 52, 72, 0.2);
+  width: 100%;
+  min-width: 320px;
+  min-height: 195px;
+  margin: 15px auto;
+  border: 1px solid #1e3448;
+  box-shadow: 0 4px 10px 4px rgba(30, 52, 72, 0.3); }
+
+#LL_myProfile-head li a {
+  background: rgba(30, 52, 72, 0.5);
+  color: #ffffff;
+  font-size: 17px;
+  float: left;
+  width: 100%;
+  min-height: 34px;
+  text-align: left; }
+  #LL_myProfile-head li a:hover {
+    background: #142030;
+    color: #ffffff; }
+
+#LL_myProfile-head .active a {
+  background: #1e3448;
+  color: #ffffff; }
+
+#LL_myProfile-settings {
+  padding: 0px; }
+  #LL_myProfile-settings > li {
+    list-style-type: none; }
+  #LL_myProfile-settings > li a {
+    width: 130px;
+    text-decoration: none;
+    font-size: 13px;
+    margin-bottom: 3px;
+    padding: 5px;
+    display: block;
+    background: rgba(30, 52, 72, 0.8);
+    color: #ffffff;
+    cursor: pointer;
+    transition: .5s ease; }
+    #LL_myProfile-settings > li a:hover {
+      background: #142030;
+      color: #ffffff; }
+
+#LL_myAvatar {
+  width: 40.6%;
+  min-width: 130px;
+  max-width: 160px;
+  height: 130px;
+  font-size: 100px;
+  text-align: center;
+  border: 1px solid #1AB188;
+  margin: 0 15px; }
+
+#LL_news1 {
+  width: 100%;
+  min-width: 320px;
+  height: calc(100vh - 300px);
+  min-height: 255px;
+  margin: 15px auto;
+  border: 1px solid #1e3448; }
+
+#LL_tournament {
+  background-color: rgba(176, 0, 0, 0.2);
+  width: 100%;
+  overflow: auto;
+  min-width: 285px;
+  margin: 15px auto;
+  min-height: 225px;
+  height: calc((100vh - 105px)/2);
+  border: 1px solid #b00000;
+  box-shadow: 0 4px 10px 4px rgba(176, 0, 0, 0.3); }
+
+#LL_tournament-head {
+  min-height: 52px; }
+  #LL_tournament-head li a {
+    background: rgba(176, 0, 0, 0.5);
+    width: 50%;
+    min-width: 130px; }
+    #LL_tournament-head li a:hover {
+      background: #990000;
+      color: #ffffff; }
+  #LL_tournament-head .active a {
+    background: #b00000;
+    color: #ffffff; }
+
+.LL_tournamentName, .LL_tournamentSportType, .LL_tournamentDate {
+  font-size: 13px;
+  color: #b00000;
+  font-weight: 500;
+  margin-bottom: 3px;
+  float: left; }
+  .LL_tournamentName:hover, .LL_tournamentSportType:hover, .LL_tournamentDate:hover {
+    background: #990000;
+    color: #ffffff;
+    cursor: pointer; }
+
+.LL_tournamentName {
+  width: 40%;
+  min-width: 115px;
+  background-color: #b00000;
+  color: #ffffff; }
+
+.LL_tournamentDate {
+  width: 24%;
+  min-width: 60px;
+  text-align: center; }
+
+.LL_tournamentSportType {
+  width: 35%;
+  min-width: 100px;
+  text-align: center; }
+
+#LL_federation {
+  background-color: rgba(134, 0, 179, 0.1);
+  width: 100%;
+  overflow: auto;
+  min-width: 320px;
+  margin: 15px auto;
+  min-height: 225px;
+  height: calc((100vh - 105px)/2);
+  border: 1px solid #8600b3;
+  box-shadow: 0 4px 10px 4px rgba(134, 0, 179, 0.3); }
+
+.LL-wrap-headers {
+  list-style: none;
+  padding: 0; }
+  .LL-wrap-headers li a {
+    display: block;
+    text-decoration: none;
+    padding: 5px;
+    margin-bottom: 15px;
+    background: rgba(134, 0, 179, 0.5);
+    color: #ffffff;
+    font-size: 17px;
+    float: left;
+    width: 30%;
+    min-width: 90px;
+    text-align: center;
+    cursor: pointer;
+    transition: .5s ease; }
+    .LL-wrap-headers li a:hover {
+      background: #600080;
+      color: #ffffff; }
+  .LL-wrap-headers .active a {
+    background: #8600b3;
+    color: #ffffff; }
+
+.LL_link-content > div:last-child {
+  display: none; }
+
+.LL_federationName, .LL_federationSportType, .LL_federationView {
+  font-size: 14px;
+  color: #8600b3;
+  font-weight: 500;
+  margin-bottom: 3px;
+  float: left; }
+  .LL_federationName:hover, .LL_federationSportType:hover, .LL_federationView:hover {
+    background: #8600b3;
+    color: #ffffff;
+    cursor: pointer; }
+
+.LL_federationName {
+  width: 50%;
+  min-width: 160px;
+  background-color: rgba(134, 0, 179, 0.5);
+  color: #ffffff; }
+
+.LL_federationView {
+  width: 10%;
+  min-width: 15px;
+  text-align: center; }
+
+.LL_federationSportType {
+  width: 40%;
+  min-width: 135px;
+  text-align: center; }
+
+#LL_team {
+  background-color: rgba(40, 113, 51, 0.2);
+  width: 100%;
+  overflow: auto;
+  min-width: 320px;
+  margin: 15px auto;
+  min-height: 225px;
+  height: calc((100vh - 105px)/2);
+  border: 1px solid #287133;
+  box-shadow: 0 4px 10px 4px rgba(40, 113, 51, 0.3); }
+
+#LL_team-head {
+  list-style: none;
+  padding: 0; }
+  #LL_team-head li a {
+    background: rgba(40, 113, 51, 0.5);
+    display: block;
+    text-decoration: none;
+    padding: 5px;
+    margin-bottom: 15px;
+    color: #ffffff;
+    font-size: 17px;
+    float: left;
+    width: 30%;
+    min-width: 90px;
+    text-align: center;
+    cursor: pointer;
+    transition: .5s ease; }
+    #LL_team-head li a:hover {
+      background: #215e2a;
+      color: #ffffff; }
+  #LL_team-head .active a {
+    background: #287133;
+    color: #ffffff; }
+
+.LL_teamName, .LL_teamSportType, .LL_teamView {
+  font-size: 14px;
+  color: #287133;
+  font-weight: 500;
+  margin-bottom: 3px;
+  float: left; }
+  .LL_teamName:hover, .LL_teamSportType:hover, .LL_teamView:hover {
+    background: #215e2a;
+    color: #ffffff;
+    cursor: pointer; }
+
+.LL_teamName {
+  width: 50%;
+  min-width: 160px;
+  background-color: #287133;
+  color: #ffffff; }
+
+.LL_teamView {
+  width: 10%;
+  min-width: 15px;
+  text-align: center; }
+
+.LL_teamSportType {
+  width: 40%;
+  min-width: 135px;
+  text-align: center; }
+
+#LL_friends {
+  width: 100%;
+  overflow: auto;
+  min-width: 285px;
+  margin: 15px auto;
+  min-height: 225px;
+  height: calc((100vh - 105px)/2);
+  background-color: rgba(255, 217, 0, 0.2);
+  border: 1px solid #ffd900;
+  box-shadow: 0 4px 10px 4px rgba(255, 217, 0, 0.3); }
+
+#LL_friends-head li a {
+  background: rgba(255, 217, 0, 0.5);
+  width: 50%;
+  min-width: 130px; }
+  #LL_friends-head li a:hover {
+    background: #fddb1c;
+    color: #ffffff; }
+
+#LL_friends-head .active a {
+  background: #ffd900;
+  color: #ffffff; }
+
+.LL_friendsMessage, .LL_friendsName, .LL_friendsOnline {
+  font-size: 16px;
+  color: #fddb1c;
+  font-weight: 500;
+  margin: 10px 0;
+  float: left; }
+  .LL_friendsMessage:hover, .LL_friendsName:hover, .LL_friendsOnline:hover {
+    background: #fddb1c;
+    color: #ffffff;
+    cursor: pointer; }
+
+.LL_friendsName {
+  width: 45%;
+  min-width: 100px;
+  text-align: center; }
+
+.LL_friendsMessage {
+  background-color: #ffd900;
+  color: #ffffff;
+  width: 15%;
+  min-width: 20px;
+  text-align: center; }
+
+.LL_friendsOnline {
+  width: 10%;
+  min-width: 15px;
+  text-align: center; }
+
+.LL_friendstAvatar {
+  width: 25%;
+  min-width: 75px;
+  float: left; }
+  .LL_friendstAvatar > div {
+    margin: 0 auto;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: black; }
+
+#LL_ad {
+  background-color: black;
+  color: white;
+  width: 100%;
+  min-width: 280px;
+  min-height: 465px;
+  height: calc(100vh - 90px);
+  margin: 15px auto;
+  border: 1px solid black; }
+
+#LL_createFederationModal {
+  width: 500px; }
+
+@media screen and (max-width: 1349px) {
+  #LL_content {
+    width: 80%;
+    margin: 0 auto; }
+  #LL_left {
+    float: left;
+    width: 100%;
+    min-width: 729px;
+    margin: 0 auto; }
+  #LL_right {
+    float: left;
+    width: 100%;
+    min-width: 620px;
+    margin: 0 auto; }
+  #LL_federation, #LL_team, #LL_tournament, #LL_friends, #LL_news1 {
+    height: auto;
+    max-height: 400px; } }
+
+/*@media screen and (max-width: 1080px) {
+  #LL_content {
+    width: 100%;
+    margin: 0 auto;
+  }
+}*/
+@media screen and (max-width: 805px) {
+  #LL_content {
+    width: 100%;
+    margin: 0 auto; }
+  #LL_firstCont, #LL_thirdCont, #LL_fourthCont, #LL_secondCont {
+    width: 100%;
+    margin-left: 5px; }
+  #LL_left, #LL_right {
+    min-width: 400px; }
+  #LL_federation, #LL_team, #LL_tournament, #LL_friends, #LL_news1 {
+    height: auto;
+    max-height: 400px; } }
