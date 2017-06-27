@@ -8,10 +8,10 @@ var connection_mysql = undefined;
 
 function connectBD(){
     connection_mysql = mysql.createConnection({
-        host: "",
-        user: "",
-        password: "",
-        database: ""
+        host: "127.0.0.1",
+        user: "root",
+        password: "Кw54aEjXTZd2",
+        database: "Lauva"
     });
 }
 connectBD();
