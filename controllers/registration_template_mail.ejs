@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Demystifying Email Design</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body style="margin: 0; padding: 0;">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+        <td>
+            <table align="center" border="0" cellpadding="0" cellspacing="0" width="600" style="border-collapse: collapse; background-image: url('http://95.46.99.158:4000/public/images/grafit.jpg'); background-repeat: repeat;">
+                <tr>
+                    <td align="center" style="padding-top: 30px">
+                        <img src="http://95.46.99.158:4000/public/images/lauva_logo_border.png" width="100" alt="LauvaGames" style="display: block;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; color: ghostwhite; text-shadow: 1px 1px 2px;">
+                        <h1>Здравствуйте, <%= user.profile.firstName %></h1>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse; background-image: url('http://95.46.99.158:4000/public/images/grafit.jpg'); background-repeat: repeat; text-align: justify;color: white;font-size: 14px;text-shadow:1px 1px 2px;">
+                            <tr>
+                                <td style="padding-top:10px; padding-left:30px; padding-right:30px">
+                                    Вы получили данное письмо, так как этот email адрес был использован при регистрации на нашем сайте.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-top:10px; padding-left:30px;  padding-right:30px">
+                                    Для того чтобы закончить процедуру регистрации, перейдите по ссылке ниже.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-top:10px; padding-left:30px;  padding-right:30px">
+                                    Пожалуйста, проигнорируйте данное письмо, если оно попало к Вам по ошибке.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="<%= link %>" style="display: block;margin: 20px auto;max-width: 180px;text-decoration: none;text-align: center;border-radius: 4px;padding: 20px 30px;color: #ffffff; background-color: #1ab188">Завершить регистрацию</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-top:10px; padding-left:30px;  padding-right:30px; padding-bottom: 30px">
+                                    <p>С уважением, <br>
+                                        Служба поддержки пользователей проекта <a style="font-size: 17px;color:  #1ab188;text-decoration: none;margin: 0;padding: 0;width: auto;display: inline-table;">LauvaGames</a></p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

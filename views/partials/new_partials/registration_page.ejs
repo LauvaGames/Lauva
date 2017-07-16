@@ -1,0 +1,63 @@
+<div class="LL_overlay"></div>
+<div class="cont">
+    <div id="content" style="z-index:8">
+        <div id="wrapper" >
+            <div id="steps">
+                <form id="formElem" name="formElem" action="/" method="post">
+                    <fieldset class="step">
+                        <legend>Email и логин</legend>
+                        <p>
+                            <label for="LL_username">Имя пользователя</label>
+                            <input id="LL_username" name="LL_username" />
+                        </p>
+                        <p>
+                            <label for="LL_email">Email</label>
+                            <input id="LL_email" name="LL_email" placeholder="info@qwerty.net" type="email" AUTOCOMPLETE=OFF />
+                        </p>
+                    </fieldset>
+                    <fieldset class="step">
+                        <legend>Пароль</legend>
+                        <p>
+                            <label for="LL_password">Пароль</label>
+                            <input id="LL_password" name="LL_password" type="password" AUTOCOMPLETE=OFF />
+                        </p>
+                    </fieldset>
+
+                    <fieldset class="step">
+                        <legend>Персональные данные</legend>
+                        <p>
+                            <label for="LL_name">Полное имя</label>
+                            <input id="LL_name" name="LL_name" type="text" AUTOCOMPLETE=OFF />
+                        </p>
+                        <p>
+                            <label for="LL_surname">Фамилия</label>
+                            <input id="LL_surname" name="LL_surname" type="text" AUTOCOMPLETE=OFF />
+                        </p>
+                    </fieldset>
+                    <fieldset class="step">
+                        <legend>Завершение регистрации</legend>
+                        <p class="submit">
+                            <button id="registerButton" type="submit">Зарегистрироваться</button>
+                        </p>
+                    </fieldset>
+                </form>
+            </div>
+            <div id="navigation" style="display:none;">
+                <ul>
+                    <li class="selected">
+                        <a href="#">Email и логин</a>
+                    </li>
+                    <li>
+                        <a href="#">Пароль</a>
+                    </li>
+                    <li>
+                        <a href="#">Персональные данные</a>
+                    </li>
+                    <li>
+                        <a href="#">Завершение</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
