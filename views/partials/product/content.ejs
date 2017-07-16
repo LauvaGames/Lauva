@@ -31,79 +31,66 @@
     <div id="LL_secondCont">
         <!-- Federation -->
         <div id="LL_federation">
-            <ul class="LL-wrap-headers">
-                <li class="LL_link active"><a href="#memberFederation">Участник</a></li>
-                <li class="LL_link"><a href="#myFederation" style="min-width: 115px; width: 31%">Председатель</a></li>
-                <li class="LL_link"><a href="/findFederation" style="width: 29%">Найти</a></li>
-                <li class="LL_link"><a data-toggle="modal" data-target="#myModal" style="width: 10%; min-width: 15px;"><i class="fa fa-plus-square" aria-hidden="true"></i></a></li>
-            </ul>
-
-            <div class="LL_link-content">
-                <div id="memberFederation">
-                    <% for(i=0; i<5; i++) { %>
-                        <div class="LL_federationName">
-                            Federation
-                        </div>
-                        <div class="LL_federationSportType">
-                            Sport type
-                        </div>
-                        <div class="LL_federationView">
-                            <i class="fa fa-eye" aria-hidden="true"  style="font-size:14px;"></i>
-                        </div>
-                    <% } %>
+            <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:600px;height:430px;overflow:hidden;visibility:hidden;">
+                <!-- Loading Screen -->
+                <div data-u="loading" style="position:absolute;top:0px;left:0px;background-color:rgba(0,0,0,0.7);">
+                    <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+                    <div style="position:absolute;display:block;background:url('../../public/images/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
                 </div>
-
-                <div id="myFederation">
-                    <div class="LL_federationName">
-                        my Name
+                <div data-u="slides" id="wrapslider" style="cursor:default;position:relative;top:0px;left:0px;width:600px;height:430px;overflow:hidden;">
+                    <div data-p="112.50">
+                        <img data-u="image" data-toggle="modal" data-target="#myFederations" src="../../public/images/fed_slide_1.jpg" style="cursor:pointer"/>
+                        <div data-u="caption" data-t="0" style="position:absolute;top:320px;left:30px;width:350px;height:30px;z-index:0;background-color:black;opacity:0.7;font-size:25px;color:#ffffff;line-height:30px;text-align:center;">Мои федерации</div>
                     </div>
-                    <div class="LL_federationSportType">
-                        my Sport
+                    <div data-p="112.50">
+                        <img data-u="image" data-toggle="modal" data-target="#myModal" src="../../public/images/fed_slide_2.jpg" style="cursor:pointer"/>
+                        <div data-u="caption" data-t="0" style="position:absolute;top:320px;left:30px;width:350px;height:30px;z-index:0;background-color:black;opacity:0.7;font-size:25px;color:#ffffff;line-height:30px;text-align:center;">Создать федерацию</div>
                     </div>
-                    <div class="LL_federationView">
-                        <i class="fa fa-eye" aria-hidden="true"  style=" font-size:14px;"></i>
+                    <div data-p="112.50">
+                        <img data-u="image" src="../../public/images/fed_slide_4.jpg" style="cursor:pointer"/>
+                        <div data-u="caption" data-t="0" style="position:absolute;top:320px;left:30px;width:350px;height:30px;z-index:0;background-color:black;opacity:0.7;font-size:25px;color:#ffffff;line-height:30px;text-align:center;">Найти федерацию</div>
                     </div>
                 </div>
-
+                <!-- Bullet Navigator -->
+                <div data-u="navigator" class="jssorb01" style="bottom:8px;right:8px;">
+                    <div data-u="prototype" style="width:12px;height:12px;"></div>
+                </div>
+                <!-- Arrow Navigator -->
+                <span data-u="arrowleft" class="jssora02l" style="top:0px;left:8px;width:55px;height:55px;" data-autocenter="2"></span>
+                <span data-u="arrowright" class="jssora02r" style="top:0px;right:8px;width:55px;height:55px;" data-autocenter="2"></span>
             </div>
         </div>
 
         <!-- Team -->
         <div id="LL_team">
-            <ul class="LL-wrap-headers" id="LL_team-head">
-                <li class="LL_linkTeam active"><a href="#memberTeam">Участник</a></li>
-                <li class="LL_linkTeam"><a href="#myTeam">Капитан</a></li>
-                <li class="LL_linkTeam"><a href="/findTeam">Найти</a></li>
-                <li class="LL_linkTeam"><a data-toggle="modal" data-target="#myModal2" style="width: 10%; min-width: 15px;"><i class="fa fa-plus-square" aria-hidden="true"></i></a></li>
-            </ul>
 
-            <div class="LL_linkTeam-content">
-                <div id="memberTeam">
-                    <% for(i=0; i<5; i++) { %>
-                        <div class="LL_teamName">
-                            Name
-                        </div>
-                        <div class="LL_teamSportType">
-                            Sport type
-                        </div>
-                        <div class="LL_teamView">
-                            <i class="fa fa-eye" aria-hidden="true"  style=" font-size:14px;"></i>
-                        </div>
-                    <% } %>
+            <div id="jssor_2" style="position:relative;margin:0 auto;top:0px;left:0px;width:590px;height:430px;overflow:hidden;visibility:hidden;">
+                <!-- Loading Screen -->
+                <div data-u="loading" style="position:absolute;top:0px;left:0px;background-color:rgba(0,0,0,0.7);">
+                    <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+                    <div style="position:absolute;display:block;background:url('../../public/images/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
                 </div>
-
-                <div id="myTeam">
-                    <div class="LL_teamName">
-                        my Name
+                <div data-u="slides" id="wrapslider" style="cursor:default;position:relative;top:0px;left:0px;width:590px;height:430px;overflow:hidden;">
+                    <div data-p="112.50">
+                        <img data-u="image" src="../../public/images/team_slider_1.png" />
+                        <div data-u="caption" data-t="0" style="position:absolute;top:320px;left:30px;width:350px;height:30px;z-index:0;background-color:black;opacity:0.7;font-size:25px;color:#ffffff;line-height:30px;text-align:center;">Мои команды</div>
                     </div>
-                    <div class="LL_teamSportType">
-                        my Sport
+                    <div data-p="112.50">
+                        <img data-u="image" data-toggle="modal" data-target="#myModal2" src="../../public/images/team_slider_2.png" style="cursor:pointer"/>
+                        <div data-u="caption" data-t="0" style="position:absolute;top:320px;left:30px;width:350px;height:30px;z-index:0;background-color:black;opacity:0.7;font-size:25px;color:#ffffff;line-height:30px;text-align:center;">Создать команду</div>
                     </div>
-                    <div class="LL_teamView">
-                        <i class="fa fa-eye" aria-hidden="true"  style=" font-size:14px;"></i>
+                    <div data-p="112.50">
+                        <img data-u="image" src="../../public/images/fed_slide_4.jpg" />
+                        <div data-u="caption" data-t="0" style="position:absolute;top:320px;left:30px;width:350px;height:30px;z-index:0;background-color:black;opacity:0.7;font-size:25px;color:#ffffff;line-height:30px;text-align:center;">Найти команду</div>
                     </div>
                 </div>
-
+                <!-- Bullet Navigator -->
+                <div data-u="navigator" class="jssorb01" style="bottom:8px;right:8px;">
+                    <div data-u="prototype" style="width:12px;height:12px;"></div>
+                </div>
+                <!-- Arrow Navigator -->
+                <span data-u="arrowleft" class="jssora02l" style="top:0px;left:8px;width:55px;height:55px;" data-autocenter="2"></span>
+                <span data-u="arrowright" class="jssora02r" style="top:0px;right:8px;width:55px;height:55px;" data-autocenter="2"></span>
             </div>
         </div>
     </div>
@@ -115,60 +102,57 @@
     <div id="LL_thirdCont">
         <!-- Friends -->
         <div id="LL_friends">
-            <ul class="LL-wrap-headers" id="LL_friends-head">
-                <li class="LL_linkFriends active"><a href="#memberFriends">Мои друзья</a></li>
-                <li class="LL_linkFriends"><a href="/findTournament">Найти</a></li>
-            </ul>
-
-            <div class="LL_linkFriends-content">
-                <div id="memberFriends">
-                    <% for(i=0; i<5; i++) { %>
-                        <div class="LL_friendstAvatar">
-                            <div></div>
-                        </div>
-                    <% if(i%2 == 1) { %>
-                        <div class="LL_friendsOnline">
-                            <i class="fa fa-user-circle" aria-hidden="true"></i>
-                        </div>
-                    <% } else {%>
-                        <div class="LL_friendsOnline">
-                            <i class="fa fa-circle" aria-hidden="true"></i>
-                        </div>
-                    <% } %>
-                        <div class="LL_friendsName">
-                            User Name
-                        </div>
-                        <div class="LL_friendsMessage">
-                            <i class="fa fa-commenting-o" aria-hidden="true"></i>
-                        </div>
-                    <% } %>
+            <div id="jssor_3" style="position:relative;margin:0 auto;top:0px;left:0px;width:590px;height:565px;overflow:hidden;visibility:hidden;">
+                <!-- Loading Screen -->
+                <div data-u="loading" style="position:absolute;top:0px;left:0px;background-color:rgba(0,0,0,0.7);">
+                    <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+                    <div style="position:absolute;display:block;background:url('../../public/images/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
                 </div>
+                <div data-u="slides" id="wrapslider" style="cursor:default;position:relative;top:0px;left:0px;width:590px;height:565px;overflow:hidden;">
+                    <div data-p="112.50">
+                        <img data-u="image" src="../../public/images/friends_slider_1.png" />
+                        <div data-u="caption" data-t="0" style="position:absolute;top:320px;left:30px;width:350px;height:35px;z-index:0;background-color:black;opacity:0.7;font-size:33px;color:#ffffff;line-height:30px;text-align:center;">Мои друзья</div>
+                    </div>
+                    <div data-p="112.50">
+                        <img data-u="image" src="../../public/images/friends_slider_2.png" style="cursor:pointer"/>
+                        <div data-u="caption" data-t="0" style="position:absolute;top:320px;left:30px;width:350px;height:35px;z-index:0;background-color:black;opacity:0.7;font-size:33px;color:#ffffff;line-height:30px;text-align:center;">Найти друзей</div>
+                    </div>
+                </div>
+                <!-- Bullet Navigator -->
+                <div data-u="navigator" class="jssorb01" style="bottom:8px;right:8px;">
+                    <div data-u="prototype" style="width:12px;height:12px;"></div>
+                </div>
+                <!-- Arrow Navigator -->
+                <span data-u="arrowleft" class="jssora02l" style="top:0px;left:8px;width:55px;height:55px;" data-autocenter="2"></span>
+                <span data-u="arrowright" class="jssora02r" style="top:0px;right:8px;width:55px;height:55px;" data-autocenter="2"></span>
             </div>
         </div>
 
         <!-- Tournament -->
         <div id="LL_tournament">
-            <ul class="LL-wrap-headers" id="LL_tournament-head">
-                <li class="LL_linkTournament active"><a href="#memberTournament">Участник</a></li>
-                <li class="LL_linkTournament"><a href="/findTournament">Найти</a></li>
-            </ul>
-
-            <div class="LL_linkTournament-content">
-                <div id="memberTournament">
-                    <% for(i=0; i<5; i++) { %>
-
-                    <div class="LL_tournamentName">
-                        Tournament
-                    </div>
-                    <div class="LL_tournamentSportType">
-                        Sport type
-                    </div>
-                    <div class="LL_tournamentDate">
-                        01.03.17
-                    </div>
-
-                    <% } %>
+            <div id="jssor_4" style="position:relative;margin:0 auto;top:0px;left:0px;width:590px;height:565px;overflow:hidden;visibility:hidden;">
+                <!-- Loading Screen -->
+                <div data-u="loading" style="position:absolute;top:0px;left:0px;background-color:rgba(0,0,0,0.7);">
+                    <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+                    <div style="position:absolute;display:block;background:url('../../public/images/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
                 </div>
+                <div data-u="slides" id="wrapslider" style="cursor:default;position:relative;top:0px;left:0px;width:590px;height:565px;overflow:hidden;">
+                    <div data-p="112.50">
+                        <img data-u="image" src="../../public/images/tournament_slider_1.png" />
+                        <div data-u="caption" data-t="0" style="position:absolute;top:320px;left:30px;width:350px;height:35px;z-index:0;background-color:black;opacity:0.7;font-size:33px;color:#ffffff;line-height:30px;text-align:center;">Мои турниры</div>
+                    </div>
+                    <div data-p="112.50">
+                        <img data-u="image" src="../../public/images/tournament_slider_2.png" style="cursor:pointer"/>
+                        <div data-u="caption" data-t="0" style="position:absolute;top:320px;left:30px;width:350px;height:35px;z-index:0;background-color:black;opacity:0.7;font-size:33px;color:#ffffff;line-height:30px;text-align:center;">Найти турнир</div>
+                    </div>
+                </div>
+                <!-- Bullet Navigator -->
+                <div data-u="navigator" class="jssorb01" style="bottom:8px;right:8px;">
+                    <div data-u="prototype" style="width:12px;height:12px;"></div>
+                </div>
+                <!-- Arrow Navigator -->
+                <span data-u="arrowleft" class="jssora02l" style="top:0px;left:8px;width:55px;height:55px;" data-autocenter="2"></span>
+                <span data-u="arrowright" class="jssora02r" style="top:0px;right:8px;width:55px;height:55px;" data-autocenter="2"></span>
             </div>
         </div>
 
@@ -301,6 +285,31 @@
                     <button id="LL_createTeam" type="submit" class="button button-block"/>Сохранить</button>
 
                 </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal window for myFederations-->
+<div id="myFederations" class="modal fade" role="dialog">
+    <div class="modal-dialog" style="width: 500px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Мои федерации</h4>
+            </div>
+
+            <div class="modal-body" style="width: 500px; height:auto; padding:40px">
+                <% for (var i=0; i<federations.length; i++) { %>
+                    <div style="display: block;">
+                        <a href="/federation/?id=<%= federations[i]._id%>">
+                            <div class="LL_federAvatar" style="background-image: <%= federations[i].federAvatar%>; background-size: cover; background-repeat: no-repeat"></div>
+                            <div class="LL_federName"> <%= federations[i].federName%> </div>
+                            <div class="LL_federSportType"> <%= federations[i].federSportType%> </div>
+                        </a>
+                    </div>
+                <% } %>
             </div>
         </div>
     </div>

@@ -156,6 +156,7 @@ $('.LL_linkTeam a').on('click', function (e) {
 
 
 /// выбор городов по выбранной стране
+
 $('#LL_country').on("change", function(){
     var country_id = $('#LL_country :selected').data('id');
     $.ajax({
@@ -182,7 +183,9 @@ $('#LL_country').on("change", function(){
     })
 });
 
+
 /// города для страны по IP
+
 $(document).ready(function(){
     var country_id = $('#LL_country :selected').data('id');
     $.ajax({
@@ -213,6 +216,8 @@ $(document).ready(function(){
         }
     })
 });
+
+
 
 /// пользователь выбрал фото
 $('#LL_userPhotoToCrop').on("change", function() {
@@ -343,6 +348,7 @@ $('#LL_federationLogoToCrop').on("change", function() {
         processData: false,
         contentType: false,
         success : function(data) {
+            console.log(data);
             $('.modal-body').empty();
             $('.modal-body').html('<img id="LL_federationLogo2" src="' + data + '">');
             $('#LL_testLabel2').show();
@@ -589,7 +595,7 @@ $('#LL_logOut').on("click", function(){
             console.log('data');
             if (data == "logout"){
                 console.log("before redirect");
-                window.location = "/";
+                window.location = "/login_page";
             }
         },
         failure: function(){
@@ -612,16 +618,19 @@ $('#LL_createFederation').on("click", function() {
         data : JSON.stringify({"federName": federName, "federDesc": federDesc, "country": country, "city": city, "sport":sport}),
         contentType: "application/json" ,
         error: function(error) {
-            console.log(error);
+            console.log('ERROR: ' + error);
         },
         success : function(data) {
             console.log(data);
             if ( data == 'federation exist') {
                 $('#LL_createFederationForm').append('<p style="color:red; font-weight: 600">Такая федерация уже существует</p>')
-            }else if ( data == "error in write to mongo") {
-                alert("error in write to mongo");
-            }else {
-                alert(data);
+            }else if ( data == "Error 1408") {
+                $('#LL_createFederationForm').append('<p style="color:red; font-weight: 600">Error 1408: Ошибка при создании федерации</p>')
+            }else if ( data == "Error 1409") {
+                $('#LL_createFederationForm').append('<p style="color:red; font-weight: 600">Error 1409: Ошибка при создании федерации</p>')
+            } else if ( data == "Error 1410") {
+                $('#LL_createFederationForm').append('<p style="color:red; font-weight: 600">Error 1410: Ошибка при создании федерации</p>')
+            } else {
                 window.location  = data;
             }
         },
@@ -629,6 +638,7 @@ $('#LL_createFederation').on("click", function() {
             alert('fail!');
         }
     });
+    return false;
 });
 
 
@@ -653,7 +663,6 @@ $('#LL_createTeam').on("click", function() {
             }else if ( data == "error in write to mongo") {
                 alert("error in write to mongo");
             }else {
-                alert(data);
                 window.location  = data;
             }
         },
@@ -661,6 +670,7 @@ $('#LL_createTeam').on("click", function() {
             alert('fail!');
         }
     });
+    return false;
 });
 
 
@@ -691,8 +701,7 @@ $('#LL_addTournament').on("click", function() {
             }else if ( data == "error in write to mongo") {
                 alert("error in write to mongo");
             }else if ( data == "/tournamentPage") {
-                alert(data);
-                window.location = "http://95.46.99.158:4000/tournamentPage";
+                window.location  = data;
             }else{
                 alert("!!!!!!!!");
             }
@@ -701,6 +710,7 @@ $('#LL_addTournament').on("click", function() {
             alert('fail!');
         }
     });
+    return false;
 });
 
 $('#LL_addEvent').on("click", function() {
@@ -729,8 +739,7 @@ $('#LL_addEvent').on("click", function() {
             }else if ( data == "error in write to mongo") {
                 alert("error in write to mongo");
             }else if ( data == "/eventPage") {
-                alert(data);
-                window.location = "http://95.46.99.158:4000/tournamentPage";
+                window.location  = data;
             }else{
                 alert("!!!!!!!!");
             }
@@ -739,6 +748,7 @@ $('#LL_addEvent').on("click", function() {
             alert('fail!');
         }
     });
+    return false;
 });
 
 

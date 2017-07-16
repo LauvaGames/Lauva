@@ -8,31 +8,51 @@
                     </div>
                     <input id='photo_adress' type="text" style="display: none" >
                 </div>
-                <p> Sport type </p>
             </div>
             <div id="LL_federInfoCont">
                 <div style="width: 100%">
                     <div class="LL_federCount">
                         <p> Подписчики </p>
-                        <p class="LL_count"> 2510 </p>
+                        <p class="LL_count"> <%= federation.users.length %> </p>
                     </div>
                     <div class="LL_federCount">
                         <p> Турниры </p>
-                        <p class="LL_count"> 22 </p>
+                        <p class="LL_count"> <%= federation.tournaments.length %> </p>
                     </div>
                     <div class="LL_federCount">
-                        <p> Новости </p>
-                        <p class="LL_count"> 30 </p>
+                        <p> Мероприятия </p>
+                        <p class="LL_count"> <%= federation.news.length %> </p>
                     </div>
                 </div>
                 <div style="width: 100%">
-                    <p class="LL_caption" style="margin-left: 10px"> Federation name </p>
+                    <p class="LL_caption" style="margin-left: 10px">
+                        <% if (federation.federName == '' || federation.federName == undefined) {%>
+                            Federation name
+                        <% } else { %>
+                            <%= federation.federName %>
+                        <% }%>
+                    </p>
                 </div>
                 <div style="width: 100%">
-                    <button type="button" class="button-fed">Подписаться</button>
+                    <% for (var i=0; i<head.length; i++) { %>
+                        <% if (head[i]._id != thisUser) { %>
+                            <button type="button" class="button-fed">Подписаться</button>
+                    <% } }%>
                 </div>
                 <div style="width: 100%">
-                    <p style="margin-left: 10px"> Country, city </p>
+                    <p style="margin-left: 10px">
+                        <% if (federation.federCountry == '' || federation.federCountry == undefined) {%>
+                            Country,
+                        <% } else { %>
+                            <%= federation.federCountry %>,
+                        <% }%>
+                        <% if (federation.federCity == '' || federation.federCity == undefined) {%>
+                            city
+                        <% } else { %>
+                            <%= federation.federCity %>
+                        <% }%>
+                    </p>
+                    <p style="margin-left: 10px"> <%= federation.federSportType %> </p>
                 </div>
             </div>
             <div id="fon">
@@ -60,53 +80,20 @@
         <div class="LL_federationFolowers">
             <div style="width:90%; margin: 0 auto">
                 <div class='LL_caption' style="float: left">Подписчики</div>
-                <div><button type="button" class="button-fed">Все подписчики</button></div>
+                <div><button type="button" class="button-fed" data-toggle="modal" data-target="#federationFolowers">Все подписчики</button></div>
             </div>
             <div style="width: 100%">
-                <div class="LL_federationFolower">
-                    <div>
-                        <div class="LL_folowerPhoto"><i class="fa fa-user" aria-hidden="true"></i></div>
+                <% for (var i=0; i<users.length; i++) { %>
+                    <div class="LL_federationFolower">
+                        <div>
+                            <div class="LL_folowerPhoto" style="background-size: cover; background-repeat: no-repeat; background-image: url('<%= users[i].profile.avatar%>')"></div>
+                        </div>
+                        <div>
+                            <p class="LL_folowerName"> <%= users[i].profile.firstName%> </br> <%= users[i].profile.lastName%> </p>
+                            <button type="button" class="button-little" style="margin-left: 10px">Написать</button>
+                        </div>
                     </div>
-                    <div>
-                        <p class="LL_folowerName">Имя Пользователя</p>
-                        <p class="LL_folowerCount"> 122 Подписчиков</p>
-                        <p class="LL_folowerCount"> 132 Подписан</p>
-                        <button type="button" class="button-little">Подписаться</button>
-                    </div>
-                </div>
-                <div class="LL_federationFolower">
-                    <div>
-                        <div class="LL_folowerPhoto"><i class="fa fa-user" aria-hidden="true"></i></div>
-                    </div>
-                    <div>
-                        <p class="LL_folowerName">Имя Пользователя</p>
-                        <p class="LL_folowerCount"> 122 Подписчиков</p>
-                        <p class="LL_folowerCount"> 132 Подписан</p>
-                        <button type="button" class="button-little">Подписаться</button>
-                    </div>
-                </div>
-                <div class="LL_federationFolower">
-                    <div>
-                        <div class="LL_folowerPhoto"><i class="fa fa-user" aria-hidden="true"></i></div>
-                    </div>
-                    <div>
-                        <p class="LL_folowerName">Имя Пользователя</p>
-                        <p class="LL_folowerCount"> 122 Подписчиков</p>
-                        <p class="LL_folowerCount"> 132 Подписан</p>
-                        <button type="button" class="button-little">Подписаться</button>
-                    </div>
-                </div>
-                <div class="LL_federationFolower">
-                    <div>
-                        <div class="LL_folowerPhoto"><i class="fa fa-user" aria-hidden="true"></i></div>
-                    </div>
-                    <div>
-                        <p class="LL_folowerName">Имя Пользователя</p>
-                        <p class="LL_folowerCount"> 122 Подписчиков</p>
-                        <p class="LL_folowerCount"> 132 Подписан</p>
-                        <button type="button" class="button-little">Подписаться</button>
-                    </div>
-                </div>
+                <% } %>
             </div>
         </div>
         <div style="width: 100%">
@@ -118,50 +105,17 @@
                 <div><button type="button" class="button-fed">Все руководители</button></div>
             </div>
             <div style="width: 100%">
-                <div class="LL_federationFolower">
-                    <div class="LL_folowerPhotoCont">
-                        <div class="LL_folowerPhoto"><i class="fa fa-user" aria-hidden="true"></i></div>
+                <% for (var i=0; i<users.length; i++) { %>
+                    <div class="LL_federationFolower">
+                        <div>
+                            <div class="LL_folowerPhoto" style="background-size: cover; background-repeat: no-repeat; background-image: url('<%= head[i].profile.avatar%>')"></div>
+                        </div>
+                        <div>
+                            <p class="LL_folowerName"> <%= head[i].profile.firstName%> </br> <%= head[i].profile.lastName%> </p>
+                            <button type="button" class="button-little" style="margin-left: 10px">Написать</button>
+                        </div>
                     </div>
-                    <div>
-                        <p class="LL_folowerName">Имя Пользователя</p>
-                        <p class="LL_folowerCount"> 122 Подписчиков</p>
-                        <p class="LL_folowerCount"> 132 Подписан</p>
-                        <button type="button" class="button-little">Подписаться</button>
-                    </div>
-                </div>
-                <div class="LL_federationFolower">
-                    <div>
-                        <div class="LL_folowerPhoto"><i class="fa fa-user" aria-hidden="true"></i></div>
-                    </div>
-                    <div>
-                        <p class="LL_folowerName">Имя Пользователя</p>
-                        <p class="LL_folowerCount"> 122 Подписчиков</p>
-                        <p class="LL_folowerCount"> 132 Подписан</p>
-                        <button type="button" class="button-little">Подписаться</button>
-                    </div>
-                </div>
-                <div class="LL_federationFolower">
-                    <div>
-                        <div class="LL_folowerPhoto"><i class="fa fa-user" aria-hidden="true"></i></div>
-                    </div>
-                    <div>
-                        <p class="LL_folowerName">Имя Пользователя</p>
-                        <p class="LL_folowerCount"> 122 Подписчиков</p>
-                        <p class="LL_folowerCount"> 132 Подписан</p>
-                        <button type="button" class="button-little">Подписаться</button>
-                    </div>
-                </div>
-                <div class="LL_federationFolower">
-                    <div>
-                        <div class="LL_folowerPhoto"><i class="fa fa-user" aria-hidden="true"></i></div>
-                    </div>
-                    <div>
-                        <p class="LL_folowerName">Имя Пользователя</p>
-                        <p class="LL_folowerCount"> 122 Подписчиков</p>
-                        <p class="LL_folowerCount"> 132 Подписан</p>
-                        <button type="button" class="button-little">Подписаться</button>
-                    </div>
-                </div>
+                <% } %>
             </div>
         </div>
     </div>
@@ -184,17 +138,29 @@
         </div>
         <div id="LL_federEvents">
             <div id="LL_federEventsTop" style="min-width: 550px; min-height: 45px">
-                <div style="width: 50%; float: left">
-                    <button type="button" class="button-fed" data-toggle="modal" data-target="#myModalAddEvent" style="margin-left: 50px">Добавить событие</button>
-                </div>
-                <div style="float: left; width: 50%">
-                    <select style="width: 155px; font-size: 1.5rem">
-                        <option>Все</option>
-                        <option>Новости</option>
-                        <option>Турниры</option>
-                        <option>Мероприятия</option>
-                    </select>
-                </div>
+                <% for (var i=0; i<head.length; i++) { %>
+                    <% if (head[i]._id == thisUser) { %>
+                        <div style="width: 50%; float: left">
+                            <button type="button" class="button-fed" data-toggle="modal" data-target="#myModalAddEvent" style="margin-left: 50px">Добавить событие</button>
+                        </div>
+                        <div style="float: left; width: 50%">
+                            <select style="width: 155px; font-size: 1.5rem">
+                                <option>Все</option>
+                                <option>Новости</option>
+                                <option>Турниры</option>
+                                <option>Мероприятия</option>
+                            </select>
+                        </div>
+                <% } else { %>
+                    <div style="float: left; margin-left:20px; width: 50%">
+                        <select style="width: 155px; font-size: 1.5rem">
+                            <option>Все</option>
+                            <option>Новости</option>
+                            <option>Турниры</option>
+                            <option>Мероприятия</option>
+                        </select>
+                    </div>
+                <% } }%>
             </div>
 
             <div id="LL_wrapBranch">
@@ -499,6 +465,35 @@
                     </div> <!-- /form -->
                 </div>
 
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal window for federation's photo-->
+    <div id="federationFolowers" class="modal fade" role="dialog">
+        <div class="modal-dialog" style="width: 550px">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Подписчики федерации</h4>
+                </div>
+                <div class="modal-body" style="width: 550px">
+                    <div id="LL_searchFolower"> Поиск подписчика </div>
+                    <div>
+                        <% for (var i=0; i<users.length; i++) { %>
+                        <div>
+                            <div class="LL_folowerPhoto" style="background-size: cover; background-repeat: no-repeat; background-image: url('<%= head[i].profile.avatar%>')"></div>
+                        </div>
+                        <div>
+                            <p class="LL_folowerName"> <%= head[i].profile.firstName%> <%= head[i].profile.lastName%> </p>
+                        </div>
+                        <div>
+                            <button type="button" class="button-little" style="margin-left: 10px">Написать</button>
+                        </div>
+                        <% } %>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

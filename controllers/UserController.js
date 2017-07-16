@@ -1,20 +1,22 @@
 "use strict";
-var geoip = require('geoip-lite');
-var async = require('async');
-var profile = require('../models/profile_model.js');
-var countries = require('../helpers/countries.js');
-var urlp = require('url');
-var qs = require('query-string');
-var fs = require('fs');
-var path = require('path');
-var formidable = require('formidable');
-var crypto = require('crypto');
-var gm = require('gm').subClass({graphicsMagick: true});
+var geoip       = require('geoip-lite');
+var async       = require('async');
+var profile     = require('../models/profile_model.js');
+var countries   = require('../helpers/countries.js');
+var urlp        = require('url');
+var qs          = require('query-string');
+var fs          = require('fs');
+var path        = require('path');
+var formidable  = require('formidable');
+var crypto      = require('crypto');
+var gm          = require('gm').subClass({graphicsMagick: true});
 const nodemailer = require('nodemailer');
-const passport = require('passport');
+const passport  = require('passport');
+const mongoose  = require('mongoose');
+
+//models
 const User = require('../models/User');
 const Federation = require('../models/federation_model');
-const Tournament = require('../models/tournament_model');
 
 /**
  * GET /getProfilePage
@@ -80,9 +82,19 @@ exports.getMainPage = (req, res, next) => {
         }
         User.findById(req.user.id, (err, user) => {
             if (err) { console.log('error in main page' + err); return next(err); }
-            res.render('../views/pages/product/main.ejs', {"countries": results[0], "sport":results[1], "c":country, "user":user});
+            var federations = user.federations;
+            var idArr = [];
+
+            for (var i=0; i<federations.length; i++) {
+                idArr.push(mongoose.Types.ObjectId(federations[i]));
+            }
+            Federation.find({
+                '_id': { $in: idArr}
+            }, function(err, docs){
+                if(err) console.log("Error in search federation by id " + err);
+                res.render('../views/pages/product/main.ejs', {"countries": results[0], "sport":results[1], "c":country, "user":user, "federations":docs});
+            });
         });
-        //res.render('../views/pages/product/main.ejs', {"countries": results[0], "sport":results[1], "c":country});
     });
 };
 
@@ -518,15 +530,37 @@ exports.doReset = (req, res, next) => {
  */
 exports.federationPage = (req, res) => {
     if (req.isAuthenticated()) {
-        /*var query = urlp.parse(req.url).query,
+        var query = urlp.parse(req.url).query,
             params = qs.parse(query);
         var id = params.id;
-        console.log('feder id: ' + id);
-        Federation.findById(id, (err, federation) => {
-            if (err) { console.log('error in federation page' + err); return next(err); }
-            res.render('../views/pages/product/federation.ejs', {"federation":federation});
-        });*/
-        res.render('./pages/product/federation.ejs');
+        if(id != undefined && id != '') {
+            Federation.findById(id, (err, federation) => {
+                if (err) { console.log('error in federation page' + err); return next(err); }
+                var users = federation.users;
+                var usersId = [];
+                for (var i=0; i<users.length; i++) {
+                    usersId.push(mongoose.Types.ObjectId(users[i]));
+                }
+                var head = federation.head;
+                var headId = [];
+                for (var count=0; count<head.length; count++) {
+                    headId.push(mongoose.Types.ObjectId(head[count]));
+                }
+                User.find({
+                    '_id': { $in: usersId}
+                }, function(err, users){
+                    if(err) console.log("Error in search users by id " + err);
+                    User.find({
+                        '_id': { $in: headId}
+                    }, function(err, heads){
+                        if(err) console.log("Error in search head by id " + err);
+                        res.render('../views/pages/product/federation.ejs', {"federation":federation, "users":users, "head":heads, "thisUser":req.user.id});
+                    });
+                });
+            });
+        } else {
+            res.render('./pages/product/federation.ejs');
+        }
     }
 };
 

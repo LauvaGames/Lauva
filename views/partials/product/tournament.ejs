@@ -106,52 +106,86 @@
         <div id="LL_federEvents">
             <div id="LL_federEventsTop" style="min-width: 550px; min-height: 45px">
                 <div style="width: 50%; float: left">
-                    <button type="button" id='LL_autoToss' class="button-fed" style="margin-left: 50px">Построить сетку</button>
+                    <button type="button" id='LL_createNewBranch' class="button-fed" style="margin-left: 50px" data-toggle="modal" data-target="#createBranch">Построить сетку</button>
                 </div>
             </div>
 
 
-            <div id="minimal">
+            <div id="LL_branch">
                 <div class="demo"></div>
             </div>
 
         </div>
     </div>
 
-
-    <!-- Modal window for federation's photo-->
-    <!--
-    <div id="myModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
+    <div id="createBranch" class="modal fade" role="dialog">
+        <div class="modal-dialog" style="height: auto; width: 550px;">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header" style="margin-bottom: 20px">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Логотип федерации</h4>
+                    <h4 class="modal-title">Создать турнирную сетку</h4>
                 </div>
-
-                <div class="modal-body">
-                    <label for="LL_federationLogoToCrop" id="LL_testLabel" style="pointer-events: auto">
-                        <div id="LL_choosePhoto"> <p>Кликните, чтобы загрузить фото с вашего компьютера </p></div>
-
-                    </label>
-                    <input type="file" id="LL_federationLogoToCrop" style="display: none;">
+                <div class="modal-body" style="height: auto; width: 550px;">
+                    <div class="form" style="display: block; margin: 0 auto; width: 100%">
+                        <div class="tab-content">
+                            <form id="LL_tournamentForm" action="/" method="post">
+                                <div class="field-wrap">
+                                    <label>
+                                        Количество команд<span class="req">*</span>
+                                    </label>
+                                    <input type="text" id="LL_teamsInBranch">
+                                </div>
+                                <div class="field-wrap">
+                                    <select id="LL_typeOfBranch" >
+                                        <option value="cup"> Кубок </option>
+                                        <option value="leage"> Лига </option>
+                                        <option valye="playoff"> Лига + плейофф </option>
+                                    </select>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-
                 <div class="modal-footer">
-                    <label for="LL_federationLogoToCrop2" id="LL_testLabel2" style="transform: none; left: 230px; text-align: center; display: none">
-                        <div type="button" class="button-fed">Другое фото</div>
-                    </label>
-                    <input type="file" id="LL_federationLogoToCrop2" style="display: none;">
-                    <button id="LL_buttonForSaveLogo" type="button-fed" class="button-fed" data-dismiss="modal">Сохранить</button>
+                    <button id="LL_buttonForCreateNewBranch" type="button" class="button-fed" data-dismiss="modal">Построить сетку</button>
                 </div>
             </div>
         </div>
     </div>
-    <input type="text" style="display: none" id="x1" name="x1">
-    <input type="text" style="display: none" id="y1" name="y1">
-    <input type="text" style="display: none" id="width1" name="width1">
-    <input type="text" style="display: none" id="height1" name="height1">
-    <input type="text" style="display: none" id="image1" name="image1">
-    <input type="text" style="display: none" id="image2" name="image2">
-       -->
+
+    <!-- Modal window for federation's photo-->
+    <!--
+     <div id="createBranch" class="modal fade" role="dialog">
+         <div class="modal-dialog">
+             <div class="modal-content">
+                 <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal">&times;</button>
+                     <h4 class="modal-title">Логотип федерации</h4>
+                 </div>
+
+                 <div class="modal-body">
+                     <label for="LL_federationLogoToCrop" id="LL_testLabel" style="pointer-events: auto">
+                         <div id="LL_choosePhoto"> <p>Кликните, чтобы загрузить фото с вашего компьютера </p></div>
+
+                     </label>
+                     <input type="file" id="LL_federationLogoToCrop" style="display: none;">
+                 </div>
+
+                 <div class="modal-footer">
+                     <label for="LL_federationLogoToCrop2" id="LL_testLabel2" style="transform: none; left: 230px; text-align: center; display: none">
+                         <div type="button" class="button-fed">Другое фото</div>
+                     </label>
+                     <input type="file" id="LL_federationLogoToCrop2" style="display: none;">
+                     <button id="LL_buttonForSaveLogo" type="button-fed" class="button-fed" data-dismiss="modal">Сохранить</button>
+                 </div>
+             </div>
+         </div>
+     </div>
+     <input type="text" style="display: none" id="x1" name="x1">
+     <input type="text" style="display: none" id="y1" name="y1">
+     <input type="text" style="display: none" id="width1" name="width1">
+     <input type="text" style="display: none" id="height1" name="height1">
+     <input type="text" style="display: none" id="image1" name="image1">
+     <input type="text" style="display: none" id="image2" name="image2">
+        -->
 </div>

@@ -51,7 +51,6 @@
   #LL_myProfile-head li a:hover {
     background: #142030;
     color: #ffffff; }
-
 #LL_myProfile-head .active a {
   background: #1e3448;
   color: #ffffff; }
@@ -100,7 +99,6 @@
   min-width: 285px;
   margin: 15px auto;
   min-height: 225px;
-  height: calc((100vh - 105px)/2);
   border: 1px solid #b00000;
   box-shadow: 0 4px 10px 4px rgba(176, 0, 0, 0.3); }
 
@@ -151,7 +149,6 @@
   min-width: 320px;
   margin: 15px auto;
   min-height: 225px;
-  height: calc((100vh - 105px)/2);
   border: 1px solid #8600b3;
   box-shadow: 0 4px 10px 4px rgba(134, 0, 179, 0.3); }
 
@@ -216,7 +213,6 @@
   min-width: 320px;
   margin: 15px auto;
   min-height: 225px;
-  height: calc((100vh - 105px)/2);
   border: 1px solid #287133;
   box-shadow: 0 4px 10px 4px rgba(40, 113, 51, 0.3); }
 
@@ -277,7 +273,6 @@
   min-width: 285px;
   margin: 15px auto;
   min-height: 225px;
-  height: calc((100vh - 105px)/2);
   background-color: rgba(255, 217, 0, 0.2);
   border: 1px solid #ffd900;
   box-shadow: 0 4px 10px 4px rgba(255, 217, 0, 0.3); }
@@ -289,7 +284,6 @@
   #LL_friends-head li a:hover {
     background: #fddb1c;
     color: #ffffff; }
-
 #LL_friends-head .active a {
   background: #ffd900;
   color: #ffffff; }
@@ -350,20 +344,22 @@
   #LL_content {
     width: 80%;
     margin: 0 auto; }
+
   #LL_left {
     float: left;
     width: 100%;
     min-width: 729px;
     margin: 0 auto; }
+
   #LL_right {
     float: left;
     width: 100%;
     min-width: 620px;
     margin: 0 auto; }
+
   #LL_federation, #LL_team, #LL_tournament, #LL_friends, #LL_news1 {
     height: auto;
     max-height: 400px; } }
-
 /*@media screen and (max-width: 1080px) {
   #LL_content {
     width: 100%;
@@ -374,11 +370,104 @@
   #LL_content {
     width: 100%;
     margin: 0 auto; }
+
   #LL_firstCont, #LL_thirdCont, #LL_fourthCont, #LL_secondCont {
     width: 100%;
     margin-left: 5px; }
+
   #LL_left, #LL_right {
     min-width: 400px; }
+
   #LL_federation, #LL_team, #LL_tournament, #LL_friends, #LL_news1 {
     height: auto;
     max-height: 400px; } }
+/* jssor slider bullet navigator skin 01 css */
+/*
+.jssorb01 div           (normal)
+.jssorb01 div:hover     (normal mouseover)
+.jssorb01 .av           (active)
+.jssorb01 .av:hover     (active mouseover)
+.jssorb01 .dn           (mousedown)
+*/
+.jssorb01 {
+  position: absolute; }
+
+.jssorb01 div, .jssorb01 div:hover, .jssorb01 .av {
+  position: absolute;
+  /* size of bullet elment */
+  width: 12px;
+  height: 12px;
+  filter: alpha(opacity=70);
+  opacity: .7;
+  overflow: hidden;
+  cursor: pointer;
+  border: #000 1px solid; }
+
+.jssorb01 div {
+  background-color: gray; }
+
+.jssorb01 div:hover, .jssorb01 .av:hover {
+  background-color: #d3d3d3; }
+
+.jssorb01 .av {
+  background-color: #fff; }
+
+.jssorb01 .dn, .jssorb01 .dn:hover {
+  background-color: #555555; }
+
+/* jssor slider arrow navigator skin 02 css */
+/*
+.jssora02l                  (normal)
+.jssora02r                  (normal)
+.jssora02l:hover            (normal mouseover)
+.jssora02r:hover            (normal mouseover)
+.jssora02l.jssora02ldn      (mousedown)
+.jssora02r.jssora02rdn      (mousedown)
+*/
+.jssora02l, .jssora02r {
+  display: block;
+  position: absolute;
+  /* size of arrow element */
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+  background: url("../images/a02.png") no-repeat;
+  overflow: hidden; }
+
+.jssora02l {
+  background-position: -3px -33px; }
+
+.jssora02r {
+  background-position: -63px -33px; }
+
+.jssora02l:hover {
+  background-position: -123px -33px; }
+
+.jssora02r:hover {
+  background-position: -183px -33px; }
+
+.jssora02l.jssora02ldn {
+  background-position: -3px -33px; }
+
+.jssora02r.jssora02rdn {
+  background-position: -63px -33px; }
+
+.LL_federAvatar {
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  background-color: red;
+  float: left; }
+
+.LL_federName {
+  float: left;
+  min-width: 100px;
+  font-size: 17px;
+  color: green; }
+
+.LL_federSportType {
+  font-size: 17px;
+  min-width: 200px;
+  color: pink; }
+
+/*# sourceMappingURL=LL_content.css.map */

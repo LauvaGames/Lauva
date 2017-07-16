@@ -120,7 +120,7 @@ $tournament-bg-dark: #990000;
   min-width: 285px;
   margin: 15px auto;
   min-height: 225px;
-  height: calc((100vh - 105px)/2);
+  //height: calc((100vh - 105px)/2);
   border: 1px solid $tournament-bg;
   box-shadow:0 4px 10px 4px rgba($tournament-bg,.3);
 }
@@ -183,7 +183,7 @@ $federation-bg-dark: #600080;
   min-width: 320px;
   margin: 15px auto;
   min-height: 225px;
-  height: calc((100vh - 105px)/2);
+ // height: calc((100vh - 105px)/2);
   border: 1px solid $federation-bg;
   box-shadow:0 4px 10px 4px rgba($federation-bg,.3);
 }
@@ -260,7 +260,7 @@ $team-bg-dark: #215e2a;
   min-width: 320px;
   margin: 15px auto;
   min-height: 225px;
-  height: calc((100vh - 105px)/2);
+  //height: calc((100vh - 105px)/2);
   border: 1px solid $team-bg;
   box-shadow:0 4px 10px 4px rgba($team-bg,.3);
 }
@@ -334,7 +334,7 @@ $friends-bg-dark: #fddb1c;
   min-width: 285px;
   margin: 15px auto;
   min-height: 225px;
-  height: calc((100vh - 105px)/2);
+  //height: calc((100vh - 105px)/2);
   background-color: rgba($friends-bg, 0.2);
   border: 1px solid $friends-bg;
   box-shadow:0 4px 10px 4px rgba($friends-bg,.3);
@@ -459,4 +459,80 @@ $friends-bg-dark: #fddb1c;
     height: auto;
     max-height: 400px;
   }
+}
+
+
+///// Sliders
+/* jssor slider bullet navigator skin 01 css */
+/*
+.jssorb01 div           (normal)
+.jssorb01 div:hover     (normal mouseover)
+.jssorb01 .av           (active)
+.jssorb01 .av:hover     (active mouseover)
+.jssorb01 .dn           (mousedown)
+*/
+.jssorb01 {
+  position: absolute;
+}
+.jssorb01 div, .jssorb01 div:hover, .jssorb01 .av {
+  position: absolute;
+  /* size of bullet elment */
+  width: 12px;
+  height: 12px;
+  filter: alpha(opacity=70);
+  opacity: .7;
+  overflow: hidden;
+  cursor: pointer;
+  border: #000 1px solid;
+}
+.jssorb01 div { background-color: gray; }
+.jssorb01 div:hover, .jssorb01 .av:hover { background-color: #d3d3d3; }
+.jssorb01 .av { background-color: #fff; }
+.jssorb01 .dn, .jssorb01 .dn:hover { background-color: #555555; }
+
+/* jssor slider arrow navigator skin 02 css */
+/*
+.jssora02l                  (normal)
+.jssora02r                  (normal)
+.jssora02l:hover            (normal mouseover)
+.jssora02r:hover            (normal mouseover)
+.jssora02l.jssora02ldn      (mousedown)
+.jssora02r.jssora02rdn      (mousedown)
+*/
+.jssora02l, .jssora02r {
+  display: block;
+  position: absolute;
+  /* size of arrow element */
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+  background: url('../images/a02.png') no-repeat;
+  overflow: hidden;
+}
+.jssora02l { background-position: -3px -33px; }
+.jssora02r { background-position: -63px -33px; }
+.jssora02l:hover { background-position: -123px -33px; }
+.jssora02r:hover { background-position: -183px -33px; }
+.jssora02l.jssora02ldn { background-position: -3px -33px; }
+.jssora02r.jssora02rdn { background-position: -63px -33px; }
+
+
+///// New styles for popup
+.LL_federAvatar {
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  background-color: red;
+  float: left;
+}
+.LL_federName {
+  float: left;
+  min-width:100px;
+  font-size: 17px;
+  color:green;
+}
+.LL_federSportType {
+  font-size: 17px;
+  min-width:200px;
+  color:pink;
 }

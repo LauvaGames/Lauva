@@ -7,7 +7,13 @@ const federSchema = new mongoose.Schema({
     federSportType: String,
     federDesc: String,
     federCountry: String,
-    federCity: String
+    federCity: String,
+    federAvatar: String,
+    users: Array,
+    head: Array,
+    tournaments: Array,
+    events: Array,
+    news: Array
 
 }, { timestamps: true });
 

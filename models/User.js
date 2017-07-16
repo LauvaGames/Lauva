@@ -28,7 +28,13 @@ const userSchema = new mongoose.Schema({
     skype: { type: String, default: '' },
     insta: { type: String, default: '' },
     avatar: { type: String, default: '' }
-  }
+  },
+
+  federations: Array,
+  tournaments: Array,
+  teams: Array,
+  friends: Array
+
 }, { timestamps: true });
 
 /**

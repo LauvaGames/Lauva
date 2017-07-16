@@ -52,7 +52,7 @@ $(document).ready(function(){
             },
             LL_password2:{
                 required: true,
-                equalTo: "#LL_password"
+                equalTo: "#LL_passwordSignup"
             }
         },
         messages: {

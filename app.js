@@ -2,28 +2,26 @@
  * Module Dependencies
  */
 const express          = require('express');
-const compression      = require('compression');
 const session          = require('express-session');
 const bodyParser       = require('body-parser');
-const logger           = require('morgan');
+//const cookieParser     = require('cookie-parser');
+const MongoStore       = require('connect-mongo')(session);
+const mongoose         = require('mongoose');
+const path             = require('path');
+const passport         = require('passport');
+const http             = require('http');
+const socketio         = require('socket.io');
+const compression      = require('compression');
+//const logger           = require('morgan');
 const errorHandler     = require('errorhandler');
 const lusca            = require('lusca');
 const dotenv           = require('dotenv');
-const MongoStore       = require('connect-mongo')(session);
 const flash            = require('express-flash');
-const path             = require('path');
-const mongoose         = require('mongoose');
-const passport         = require('passport');
 const expressValidator = require('express-validator');
 const sass             = require('node-sass-middleware');
 const multer           = require('multer');
-const http             = require('http');
-const socketio         = require('socket.io');
-
-///////////////////// from old lauva
-//const cookieParser = require('cookie-parser');
 const fs = require('fs');
-/////////////////////
+
 
 /**
  * Load environment variables such as api keys, passwords
@@ -36,6 +34,9 @@ dotenv.load({ path: '.env' });
 const homeController = require('./controllers/home');
 const userController = require('./controllers/UserController.js');
 var productController = require('./controllers/ProductController.js');
+
+/// new controller for lauva. Created 10.07.17
+const mainController = require('./controllers/Main_controller.js');
 
 
 /**
@@ -63,8 +64,9 @@ mongoose.connection.on('error', () => {
   process.exit(1);
 });
 
-///////////////////// from old lauva
-//databases
+/**
+ * Connect to MySQL
+ */
 const mysql = require('mysql');
 var mysqlConnect = require('./helpers/connection_mysql.js');
 mysqlConnect.on('error', function(err) {
@@ -73,23 +75,12 @@ mysqlConnect.on('error', function(err) {
     mysqlConnect = require('./helpers/connection_mysql.js');
   }, 1000);
 });
-//I need mongo and redis
-/////////////////////
 
 /**
  * Express Configuration
  */
-
-///////////////////// from old lauva
-//app.use(bodyParser.json()); // for parsing application/json
-//app.use(cookieParser());
-//app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
-//app.use('/static', express.static(LauvaOptions['mainpath'] + '/static'));
-//app.use(express.static(__dirname + '/static'));
+app.use("/public", express.static(__dirname + '/public'));
 app.use("/uploads", express.static(__dirname + '/uploads'));
-//app.set('view engine', 'ejs');
-/////////////////////
-
 app.set('port', process.env.PORT || 4000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -98,7 +89,7 @@ app.use(sass({
   src: path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public')
 }));
-app.use(logger('dev'));
+//app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(expressValidator());
@@ -111,6 +102,11 @@ app.use(session({
     autoReconnect: true
   })
 }));
+
+/*app.use(cookieParser());
+app.use(express.cookieParser('keyboard cat'));
+app.use(express.session({ cookie: { maxAge: 60000 }}));*/
+
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
@@ -126,6 +122,7 @@ app.use(function(req, res, next) {
         csrfMiddleware(req, res, next);
     }
 });
+
 
 
 app.use((req, res, next) => {
@@ -160,40 +157,48 @@ app.post('/account/delete', isAuthenticated, userController.deleteAccount);
 app.get('/account/unlink/:provider', isAuthenticated, userController.oauthUnlink);*/
 
 ///////////////////// from old lauva
-/// client urls
 app.get('/', isAuthenticated, userController.getMainPage);
 app.post('/', isAuthenticated, function(req,res){
   res.status(303).redirect('/');
 });
-//authorize
+
+// new lauva created 10.07.17
+app.get('/login_page', mainController.login_page);
+app.get('/registration_page', mainController.registration_page);
+app.post('/login', mainController.doLogin);
+app.post('/registration', mainController.doRegister);
+app.get('/registration_complete', mainController.registration_complete);
+app.get('/password_recovery_page', mainController.password_recovery_page);
+app.post('/password_recovery', mainController.password_recovery);
+app.get('/password_recovery_mail', mainController.password_recovery_mail);
+app.get('/change_password_page', mainController.change_password_page);
+app.post('/save_new_password', mainController.save_new_password);
+
+
+
 app.get('/authorize', userController.login);
 app.get('/authorize', userController.register);
-// logout
+
 app.get('/logout', isAuthenticated, userController.logout);
-// forgot password
-app.get('/forgotPassword', userController.forgot);
-// render federation page
-app.get('/federation', userController.federationPage);
-// render federation page
-app.get('/team', userController.teamPage);
-// render tournament page
-app.get('/tournamentPage', userController.tournamentPage);
-// edit profile page
-app.get('/profile', userController.getProfilePage);
+app.get('/forgotPassword', isAuthenticated, userController.forgot);
+app.get('/federation', isAuthenticated, userController.federationPage);
+app.get('/team', isAuthenticated, userController.teamPage);
+app.get('/tournament', isAuthenticated, userController.tournamentPage);
+app.get('/profile', isAuthenticated, userController.getProfilePage);
 
 app.get('/passwordRecovery', function (req, res) {
   res.render('./pages/product/passwordRecovery.ejs', {});
 });
-/// change password page
 app.get('/changePassword', userController.changePassword);
 
 
+//app.post('/login', userController.doLogin);
+//app.post('/registration', userController.doRegister);
 
 
 app.get('/getCities', function(req, res){
   userController.getCities(req , res);
 });
-
 
 app.post('/addUserPhoto', function(req, res){
   userController.addUserPhoto(req , res);
@@ -202,7 +207,6 @@ app.post('/addUserAvatar', function(req, res){
   userController.addUserAvatar(req , res);
 });
 
-// federation logo
 app.post('/addFederationAvatar', function(req, res){
   productController.addFederationAvatar(req , res);
 });
@@ -210,7 +214,6 @@ app.post('/addFederationLogo', function(req, res){
   productController.addFederationLogo(req , res);
 });
 
-//team logo
 app.post('/addTeamAvatar', function(req, res){
   productController.addTeamAvatar(req , res);
 });
@@ -219,34 +222,17 @@ app.post('/addTeamLogo', function(req, res){
 });
 
 app.post('/editProfile', isAuthenticated, userController.updateProfile);
-/// add new password
 app.post('/newPassword', isAuthenticated, userController.updatePassword);
-/// create Federation
 app.post('/createFederation', productController.createFederetion);
-/// create team
 app.post('/createTeam', productController.createTeam);
-/// create Tournament
 app.post('/createTournament', productController.createTournament);
-/// create Event
 app.post('/createEvent', productController.createEvent);
-/// create News
 app.post('/createNews', productController.createNews);
-
 app.post('/uploadNewsImg', function(req, res){
   productController.uploadNewsImg(req , res);
 });
 
-
-
-
-
-//app.post('/product/login', function(req, res){
-app.post('/login', userController.doLogin);
-
-app.post('/registration', userController.doRegister);
-/////////////////////
-
-
+app.post('/tournamentScores', productController.tournamentScores);
 
 /**
  * OAuth Authentication Routes

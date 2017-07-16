@@ -9,7 +9,9 @@ const tournamentSchema = new mongoose.Schema({
     time: String,
     desc: String,
     coordsX: String,
-    coordsY: String
+    coordsY: String,
+    teams: Array,
+    scores: Array
 
 }, { timestamps: true });
 
